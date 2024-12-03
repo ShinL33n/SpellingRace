@@ -8,6 +8,8 @@ namespace SpellingRace.Core
 {
     public class Game1 : Game
     {
+
+        public static SceneManager SceneManager;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
@@ -16,7 +18,8 @@ namespace SpellingRace.Core
         {
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            _graphics = new GraphicsDeviceManager(this);
+            _graphics = new(this);
+            SceneManager = new();
         }
 
         protected override void Initialize()
@@ -36,66 +39,30 @@ namespace SpellingRace.Core
             base.Initialize();
         }
 
-        // Test buttons
-        Texture2D exampleTestButtonTexture;
-        SpriteFont arialFont;
-        
-        // for later use
-        //private static readonly Dictionary<string, Button> _buttons = new();
-        private static  Button[] _buttons;
-
 
         protected override void LoadContent()
         {
-            arialFont = Content.Load<SpriteFont>("Fonts/testFont");
-            exampleTestButtonTexture = Content.Load<Texture2D>("Textures/Gui/game_example_texture");
-            _buttons = [ 
-                new Button(
-                    new Vector2(_graphics.PreferredBackBufferWidth / 2,
-                    _graphics.PreferredBackBufferHeight / 2),
-                    new Vector2(300, 100),
-                    exampleTestButtonTexture,
-                    arialFont,
-                    Color.White,
-                    "",
-                    Color.White,
-                    Color.Gray,
-                    Color.Red,
-                    true
-                ),
-                new Button (
-                    new Vector2(_graphics.PreferredBackBufferWidth / 2,
-                    _graphics.PreferredBackBufferHeight / 2 + 200),
-                    new Vector2(300, 100),
-                    exampleTestButtonTexture,
-                    arialFont,
-                    Color.White,
-                    "",
-                    Color.White,
-                    Color.Gray,
-                    Color.Red,
-                    true
-                )
-            ];
+            SceneManager.AddScene(new MenuScene());
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            SceneManager.Update(gameTime);
 
-            InputManager.Update();
-
-            foreach(var button in _buttons) { button.Update(); }
+            if(SceneManager.IsEmpty) Exit();
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            _graphics.GraphicsDevice.Clear(Color.Black);
+           
+            _spriteBatch.Begin();
 
-            foreach(var button in _buttons) { button.Draw(); }
+            SceneManager.Draw();
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }

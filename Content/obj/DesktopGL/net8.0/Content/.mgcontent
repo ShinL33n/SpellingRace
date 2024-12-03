@@ -4,10 +4,18 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Fonts/testFont.spritefont</File>
-    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Gui/game_example_texture.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Fonts/InterFont.spritefont</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Fonts/OpenDyslexicFont.spritefont</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/GameBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MenuBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/OptionsBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Gui/MenuOptionBorder.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

@@ -5,7 +5,7 @@ namespace SpellingRace.Gui.Elements
     public class Button
     {
         private enum _buttonStates { IDLE, HOVER, ACTIVE }
-        private _buttonStates _buttonState = _buttonStates.IDLE;
+        private _buttonStates _buttonState;
 
         private Vector2 _position, _size, _textPosition;
         private Texture2D _texture;
@@ -27,6 +27,8 @@ namespace SpellingRace.Gui.Elements
         /// </summary>
         public Button(Vector2 position, Vector2 size, SpriteFont font, Color textColor, string text, Color idleColor, Color hoverColor, Color activeColor, bool alignToCenterPoint = false)
         {
+            _buttonState = _buttonStates.IDLE;
+
             // DI
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
             _graphicsDevice = ServiceProvider.Resolve<GraphicsDevice>();
@@ -38,7 +40,7 @@ namespace SpellingRace.Gui.Elements
             // Texts
             _font = font;
             _text = text;
-            _textPosition = position + (size - font.MeasureString(text)) / 2;
+            _textPosition = _position + (size - font.MeasureString(text)) / 2;
 
             // Colors & Textures
             _textColor = textColor;
@@ -55,6 +57,8 @@ namespace SpellingRace.Gui.Elements
         /// </summary>
         public Button(Vector2 position, Vector2 size, Texture2D texture, SpriteFont font, Color textColor, string text, Color idleColor, Color hoverColor, Color activeColor, bool alignToCenterPoint = false)
         {
+            _buttonState = _buttonStates.IDLE;
+
             // DI
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
 
@@ -65,7 +69,7 @@ namespace SpellingRace.Gui.Elements
             // Texts
             _font = font;
             _text = text;
-            _textPosition = position + (size - font.MeasureString(text)) / 2;
+            _textPosition = _position + (size - font.MeasureString(text)) / 2;
 
             // Colors & Textures
             _textColor = textColor;
@@ -90,7 +94,6 @@ namespace SpellingRace.Gui.Elements
                 if (InputManager.LeftMouseButtonClicked)
                 {
                     _buttonState = _buttonStates.ACTIVE;
-                    
                 }
             }
 
@@ -106,10 +109,8 @@ namespace SpellingRace.Gui.Elements
 
         public void Draw()
         {
-            _spriteBatch.Begin();
             _spriteBatch.Draw(_texture, _buttonBoundaries, _maskColor);
             _spriteBatch.DrawString(_font, _text, _textPosition, _textColor);
-            _spriteBatch.End();
         }
     }
 }

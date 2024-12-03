@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework.Input;
 
 namespace SpellingRace.Scenes
 {
@@ -15,7 +16,8 @@ namespace SpellingRace.Scenes
 
         public override void Update(GameTime gameTime)
         {
-
+            InputManager.Update();
+            if(InputManager.WasKeyTriggered(Keys.Escape)) SceneQuited = true;
         }
 
         public override void Draw()

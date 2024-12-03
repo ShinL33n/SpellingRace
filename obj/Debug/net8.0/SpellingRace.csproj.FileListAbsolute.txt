@@ -26,5 +26,9 @@
 /home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/obj/Debug/net8.0/ref/SpellingRace.dll
 /home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
 /home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Textures/Gui/game_example_texture.xnb
-/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Fonts/testFont.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Fonts/InterFont.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Fonts/OpenDyslexicFont.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Media/Backgrounds/MenuBackground.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Media/Backgrounds/OptionsBackground.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Textures/Gui/MenuOptionBorder.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Media/Backgrounds/GameBackground.xnb
