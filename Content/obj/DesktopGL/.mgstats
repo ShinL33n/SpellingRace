@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Fonts/testFont.spritefont","/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/bin/DesktopGL/Fonts/testFont.xnb","FontDescriptionProcessor","SpriteFontContent",2008,37922,0,1684165
+"/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Gui/game_example_texture.png","/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/bin/DesktopGL/Textures/Gui/game_example_texture.xnb","TextureProcessor","Texture2DContent",9229,953821,0,0414595
