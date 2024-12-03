@@ -6,11 +6,14 @@ namespace SpellingRace.Models
 {
     public abstract partial class Scene
     {    
+        public bool SceneQuited { get; protected set; }
+
         protected ContentManager _content;
         protected GraphicsDeviceManager _graphics;
         protected SpriteBatch _spriteBatch;
 
-        public bool SceneQuited { get; protected set; }
+        protected Vector2 windowSize;
+        protected Vector2 windowCenter;
 
         public Scene() 
         { 
@@ -19,6 +22,9 @@ namespace SpellingRace.Models
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>() ?? throw new NullReferenceException("SpriteBatch not registered in ServiceProvider.");
 
             SceneQuited = false;
+
+            windowSize = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+            windowCenter = new(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
 
             LoadContent();
         }

@@ -12,11 +12,8 @@ namespace SpellingRace.Gui.Elements
         private Color _idleColor, _hoverColor, _activeColor, _maskColor, _textColor;
         private SpriteFont _font;
         private string _text;
+        private Rectangle _buttonBoundaries;
 
-        private Rectangle _buttonBoundaries
-        {
-            get { return new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); }
-        }
 
         private readonly SpriteBatch _spriteBatch;
         private readonly GraphicsDevice _graphicsDevice;
@@ -50,6 +47,8 @@ namespace SpellingRace.Gui.Elements
 
             _texture = new Texture2D(_graphicsDevice, (int)size.X, (int)size.Y);
             _texture.SetData([Color.White]);
+
+            _buttonBoundaries = new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); 
         }
 
         /// <summary>
@@ -77,6 +76,8 @@ namespace SpellingRace.Gui.Elements
             _hoverColor = hoverColor;
             _activeColor = activeColor; 
             _texture = texture;
+
+            _buttonBoundaries = new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); 
         }
 
         public bool Clicked()

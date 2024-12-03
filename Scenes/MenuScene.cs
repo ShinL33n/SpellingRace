@@ -28,7 +28,7 @@ namespace SpellingRace.Scenes
 
             _background = new(menuBackground);
 
-            Vector2 windowCenter = new(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
+            
             Vector2 buttonSize = new(581, 116);
 
             _buttons = new() {

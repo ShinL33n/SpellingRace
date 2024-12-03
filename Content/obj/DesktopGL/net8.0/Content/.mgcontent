@@ -9,9 +9,11 @@
     <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/GameBackground.png</File>
     <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MenuBackground.png</File>
     <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/OptionsBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Game/Player.png</File>
     <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Gui/MenuOptionBorder.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
