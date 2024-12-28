@@ -51,10 +51,14 @@ with.
     See the documentation for more information.
     -->
     <CharacterRegions>
-      <CharacterRegion>
-        <Start>&#32;</Start>
-        <End>&#126;</End>
-      </CharacterRegion>
+		<CharacterRegion>
+			<Start>&#32;</Start> <!-- Spacja -->
+			<End>&#126;</End> <!-- Podstawowe znaki ASCII -->
+		</CharacterRegion>
+		<CharacterRegion>
+			<Start>&#260;</Start> <!-- Polski znak "Ą" -->
+			<End>&#382;</End> <!-- Polski znak "Ź" -->
+		</CharacterRegion>
     </CharacterRegions>
   </Asset>
 </XnaContent>

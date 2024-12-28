@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Gui/MenuOptionBorder.png</SourceFile>
-  <SourceTime>2024-12-03T17:46:49.3700961+01:00</SourceTime>
-  <DestFile>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/bin/DesktopGL/Content/Textures/Gui/MenuOptionBorder.xnb</DestFile>
-  <DestTime>2024-12-03T17:54:00.4353032+01:00</DestTime>
+  <SourceFile>C:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/MenuOptionBorder.png</SourceFile>
+  <SourceTime>2024-12-27T23:01:55.7724929+01:00</SourceTime>
+  <DestFile>C:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Content/Textures/Gui/MenuOptionBorder.xnb</DestFile>
+  <DestTime>2024-12-27T23:04:43.3990331+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

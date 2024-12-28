@@ -1,25 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/SpellingRace.csproj": {}
+    "C:\\Pliki\\Dokumenty\\Programming Projects\\C#\\SpellingRace\\SpellingRace.csproj": {}
   },
   "projects": {
-    "/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/SpellingRace.csproj": {
+    "C:\\Pliki\\Dokumenty\\Programming Projects\\C#\\SpellingRace\\SpellingRace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/SpellingRace.csproj",
+        "projectUniqueName": "C:\\Pliki\\Dokumenty\\Programming Projects\\C#\\SpellingRace\\SpellingRace.csproj",
         "projectName": "SpellingRace",
-        "projectPath": "/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/SpellingRace.csproj",
-        "packagesPath": "/home/releme/.nuget/packages/",
-        "outputPath": "/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/obj/",
+        "projectPath": "C:\\Pliki\\Dokumenty\\Programming Projects\\C#\\SpellingRace\\SpellingRace.csproj",
+        "packagesPath": "C:\\Users\\releme\\.nuget\\packages\\",
+        "outputPath": "C:\\Pliki\\Dokumenty\\Programming Projects\\C#\\SpellingRace\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/releme/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\releme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -36,9 +44,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -68,26 +75,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.11, 8.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.11, 8.0.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

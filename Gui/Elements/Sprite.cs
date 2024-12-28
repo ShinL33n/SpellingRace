@@ -5,12 +5,14 @@ namespace SpellingRace.Gui.Elements
     public class Sprite
     {
 
-        private Vector2 _position, _size, _textPosition;
+        private Vector2 _position, _size, _textPosition, _textSize;
         private Texture2D _texture;
         private SpriteFont _font;
         private string _text;
         private Rectangle _spriteBoundaries;
         private bool _alignToCenterPoint;
+        private Color _textColor;
+        private float _scale;
 
 
         private readonly SpriteBatch _spriteBatch;
@@ -56,6 +58,7 @@ namespace SpellingRace.Gui.Elements
 
             // Texture
             _texture = texture;
+            _textColor = textColor;
 
             _spriteBoundaries = new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); 
 
@@ -71,11 +74,20 @@ namespace SpellingRace.Gui.Elements
             _position = _alignToCenterPoint ? _position - _size / 2 : _position;
 
             _spriteBoundaries = new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); 
+
+            if(_font != null && _text != null) {
+                _textSize = _font.MeasureString(_text);
+                _scale = (_size.X - 40f) / _textSize.X;
+                _textPosition.X = _position.X + _size.X / 2;
+                _textPosition.Y = _position.Y + _size.Y / 2;
+            }
         }
 
         public void Draw()
         {
             _spriteBatch.Draw(_texture, _spriteBoundaries, Color.White);
+
+            if(_font != null && _text != null) _spriteBatch.DrawString(_font, _text, _textPosition, Color.White, 0f, _textSize / 2, _scale, SpriteEffects.None, 0f);
         }
     }
 }

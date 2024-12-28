@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Fonts/InterFont.spritefont","/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/bin/DesktopGL/Fonts/InterFont.xnb","FontDescriptionProcessor","SpriteFontContent",2005,267298,0,2180315
+"c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Fonts/InterFont.spritefont","c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Fonts/InterFont.xnb","FontDescriptionProcessor","SpriteFontContent",2238,535100,0,2879626
+"c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Fonts/OpenDyslexicFont.spritefont","c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Fonts/OpenDyslexicFont.xnb","FontDescriptionProcessor","SpriteFontContent",2248,535100,0,0659699

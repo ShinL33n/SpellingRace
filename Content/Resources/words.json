@@ -1,0 +1,170 @@
+{
+  "difficulty_levels": [
+    {
+		"level": 0,
+		"forms": [
+			{
+				"2": [
+					{"word": "żaba", "incorrect_forms": ["rzaba"]},
+					{"word": "zupa", "incorrect_forms": ["zópa"]},
+					{"word": "król", "incorrect_forms": ["krul"]},
+					{"word": "żar", "incorrect_forms": ["rzar"]},
+					{"word": "chora", "incorrect_forms": ["hora"]},
+					{"word": "brzeg", "incorrect_forms": ["bżeg"]},
+					{"word": "pióro", "incorrect_forms": ["piuro"]},
+					{"word": "górka", "incorrect_forms": ["gurka"]},
+					{"word": "chory", "incorrect_forms": ["hory"]}
+				]
+			},
+			{
+				"3": [
+					{"word": "żółty", "incorrect_forms": ["żułty", "rzułty"]}
+				]
+			}
+		]
+	},
+    {
+		"level": 1,
+		"forms": [
+			{
+				"2": [
+					{"word": "wóz", "incorrect_forms": ["wuz"]},
+					{"word": "wózek", "incorrect_forms": ["wuzek"]},
+					{"word": "chłopak", "incorrect_forms": ["hłopak"]},
+					{"word": "złamać", "incorrect_forms": ["złamadź"]},
+					{"word": "szum", "incorrect_forms": ["szóm"]},
+					{"word": "chować", "incorrect_forms": ["hować"]},
+					{"word": "rzeka", "incorrect_forms": ["żeka"]}
+				]
+			},
+			{
+				"3": [
+					{"word": "wieża", "incorrect_forms": ["wierza", "wiesza"]}	
+				]
+			},
+			{
+				"4": [
+					{"word": "brzydki", "incorrect_forms": ["bżydki", "brzytki", "bżytki"]},
+					{"word": "róża", "incorrect_forms": ["ruża", "rórza", "rurza"]}
+				]
+			},
+			{
+				"6": [
+					{"word": "rzucać", "incorrect_forms": ["żucać", "rzócać", "żócać", "rzucadź", "żucadź"]}
+				]
+			}
+		]
+    },
+    {
+		"level": 2,
+		"forms": [
+			{	
+				"2": [
+					{"word": "wróbel", "incorrect_forms": ["wrubel"]},
+					{"word": "powód", "incorrect_forms": ["powud"]}					
+				]
+			},	
+			{
+				"3": [
+					{"word": "jabłko", "incorrect_forms": ["jabko", "jabułko"]},
+					{"word": "przyjaciel", "incorrect_forms": ["pszyjaciel", "pżyjaciel"]}				
+				]
+			},
+			{
+				"4": [
+					{"word": "rzeźba", "incorrect_forms": ["żeźba", "rześba", "żeśba"]},
+					{"word": "chłód", "incorrect_forms": ["hłód", "chłud", "hłud"]},
+					{"word": "grzyb", "incorrect_forms": ["gżyb", "grzyp", "gżyp"]},
+					{"word": "wschód", "incorrect_forms": ["wschud", "wshód", "wschót"]},
+					{"word": "żuraw", "incorrect_forms": ["rzuraw", "żuraf", "rzuraf"]}
+				]
+			},
+			{
+				"5": [
+					{"word": "ciągnąć", "incorrect_forms": ["ciongnąć", "ciongnonć", "ciągnonć", "ciągnądź"]}
+				]
+			}
+		]
+    },
+    {
+		"level": 3,
+		"forms": [
+			{
+				"3": [
+					{"word": "strzał", "incorrect_forms": ["stżał", "stszał"]},
+					{"word": "wrzesień", "incorrect_forms": ["wżesień", "wrzesięń"]},
+					{"word": "pożar", "incorrect_forms": ["porzar", "poszar"]}
+				]
+			},
+			{
+				"4": [
+					{"word": "przerażenie", "incorrect_forms": ["pżerażenie", "przerarzenie", "pżerarzenie"]},
+					{"word": "chmura", "incorrect_forms": ["chmóra", "hmura", "hmóra"]},
+					{"word": "wrócić", "incorrect_forms": ["wrucić", "wrócidź", "wrucidź"]}
+				]
+			},
+			{
+				"5": [
+					{"word": "mężczyzna", "incorrect_forms": ["menżczyzna", "męrzczyzna", "menszczyzna", "męszczyzna"]}
+				]
+			},
+			{
+				"8": [
+					{"word": "żółw", "incorrect_forms": ["żółf", "żułw", "rzółw", "rzułw", "rzułf", "żułf", "rzułf"]}
+				]
+			}
+		]
+    },
+    {
+		"level": 4,
+		"forms": [
+			{
+				"2": [
+					{"word": "rzezimieszek", "incorrect_forms": ["żezimieszek"]},
+					{"word": "żyrafa", "incorrect_forms": ["rzyrafa"]},
+					{"word": "żywioł", "incorrect_forms": ["rzywioł"]}
+				]
+			},
+			{
+				"4": [
+					{"word": "chrapać", "incorrect_forms": ["hrapać", "chrapadź", "hrapadź"]},		
+					{"word": "chrząstka", "incorrect_forms": ["hrząstka", "chżąstka", "hżąstka"]}
+				]
+			},
+			{
+				"6": [
+					{"word": "dróżka", "incorrect_forms": ["drużka", "druszka", "drórzka", "drurzka", "drószka"]}
+				]
+			}
+		]
+    },
+    {
+		"level": 5,
+		"forms": [
+			{
+				"3": [
+					{"word": "chrzęszczący", "incorrect_forms": ["hrzęszczący", "chszęszczący"]},
+					{"word": "świerszcz", "incorrect_forms": ["świrrzcz", "świerżcz"]}
+				]
+			},
+			{
+				"4": [
+					{"word": "chrzan", "incorrect_forms": ["hrzan", "hżan", "chżan"]}
+				]
+			},
+			{
+				"5": [
+					{"word": "chrząszcz", "incorrect_forms": ["chżąszcz", "chrzążcz", "chrząrzcz", "chsząszcz"]},
+					{"word": "chrzestny", "incorrect_forms": ["chżestny", "chszestny", "hrzestny", "hżestny"]}
+				]
+			},
+			{
+				"7": [
+					{"word": "gżegżółka", "incorrect_forms": ["grzegłóżka", "gżegrzółka", "grzegrzółka", "gżegrzułka", "grzegżułka", "gżegżułka"]},
+					{"word": "rzeżucha", "incorrect_forms": ["żeżucha", "rzerzucha", "żerzucha", "rzeżócha", "żerzócha", "żeżócha"]}
+				]
+			}
+		]
+    }
+  ]
+}
