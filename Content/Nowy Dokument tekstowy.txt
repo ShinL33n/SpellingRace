@@ -1,0 +1,186 @@
+rzeka - żeka  
+żaba - rzaba  
+chmura - chmóra, hmura, hmóra  
+wóz - wuz  
+książka - ksiąrzka, ksionżka, ksiąszka, ksionszka  
+wrócić - wrucić, wrócidź, wrucidź  
+wrzesień - wżesień, wrzesięń  
+drzewo - dżewo, dszewo  
+żołnierz - rzołnierz, rzołnież, żąłnierz, rząnież  
+chory - hory  
+chłopak - hłopak  
+źródło - źrudło  
+chłód - hłód, chłud, hłud  
+brzeg - bżeg  
+chować - hować  
+rzeźba - żeźba, rześba, żeśba  
+dzielić - dzielidź  
+wschód - wschud, wshód, wschót  
+wróbel - wrubel  
+chwytać - hwytać, chwytadź  
+strzał - stżał, stszał  
+wózek - wuzek  
+przyjaciel - pszyjaciel, pżyjaciel  
+pióro - piuro  
+grzyb - gżyb, grzyp, gżyp  
+róża - ruża, rórza, rurza  
+zupa - zópa  
+wójt - wujt  
+brzydki - bżydki, brzytki, bżytki  
+wschodni - wshodni  
+szum - szóm  
+ciągnąć - ciongnąć, ciongnonć, ciągnonć, ciągnądź  
+dróżka  - drużka, druszka, drórzka, drurzka, drószka
+wózek  - wuzek
+wstrząs  - wstżąs, wstrzons, wstżons
+piórko  - piurko
+pożar - porzar, poszar  
+jabłko - jabko, jabułko
+górka  - gurka
+powód  - powud
+żuraw  - rzuraw, żuraf, rzuraf
+chora  - hora
+pożyczyć  - porzyczyć
+mężczyzna  - menżczyzna, męrzczyzna, menszczyzna, męszczyzna
+król  - krul
+żar  - rzar
+chrapać  - hrapać, chrapadź, hrapadź
+błąd  - błond, błąt, błont
+żółty  - żułty, rzułty
+żart  - rzart
+zachód  - zachud, zachót
+rzucać  - żucać, rzócać, żócać, rzucadź, żucadź
+różowy  - rużowy, rórzowy, rurzowy
+górska  - gurska
+przejście  - pżejście
+czuć  - czóć, czudź, czódź
+czekać - czekadź
+złamać  - złamadź
+wieża  - wierza, wiesza
+rzeki  - żeki
+wrzesień  - wżesień
+przerażenie - pżerażenie, przerarzenie, pżerarzenie
+strzała  - stżała
+wstrząs  - wstżąs, wstrząz, wstsząs, wstrząz
+przyszłość - pżyszłość, pszyszłość
+przyjaciel  - pszyjaciel, pżyjaciel
+Żółw  - żółf, żułw, rzółw, rzułw, rzułf, żułf, rzułf
+Chrząszcz  - chżąszcz, chrzążcz, chrząrzcz, chsząszcz
+Horyzont  - choryzont, horyzond, choryzond
+Wrzątek  - wżątek, wrząteg, wżąteg
+Wzdłuż - wzdłusz, wzdłórz, wzdłósz, wzdłurz
+Rzeżucha  - żeżucha, rzerzucha, żerzucha, rzeżócha, żerzócha, żeżócha
+Świerszcz  -świrrzcz, świerżcz
+Rzemiosło  - żemiosło
+Drzazga  - dżazga, drzazka
+Wrzosowisko  - wżosowisko
+Próżność  - prużność, prórznośćm, prurzność
+Jęczmień  - jeńczmień, jęćmień, jęczmien
+Chrzęst  - chżęst, chszęst
+Chrzan  - hrzan, hżan, chżan
+Huczek  - chuczek
+Rzadkość  - żadkość
+Brzask  - bżask, bszask
+Krzew  - kżew, krzef, kżef
+Wrzask  - wżask
+Żubr  - rzubr, rzóbr, żóbr
+Chrzestny  - chżestny, chszestny, hrzestny, hżestny
+Hrabina  - chrabina
+Chrzęszczący  - hrzęszczący, chszęszczący
+Wrzód  - wżud, wżód, wrzud, wrzót, wżót
+Żeglarz - rzeglarz, rzeglaż, żelglasz, rzeglasz
+Rześki  - żeśki
+Drzeworyt  - dżeworyt, dszeworyt
+Przemysł  - pżemysł, pszemysł
+Hektar  - chektar
+Wrzątek  - wszątek, wżątek, wrzontek, wżontek
+Żywopłot  - rzywopłot
+Przebrzmiały  - pszebrzmiały, pszebszmiały, pżebżmiałym, przebżmiały
+Chwycić  - hwycić, chwycidź, hwycidź
+Chrześcijaństwo  - chżeścijaństwo, hrześcijaństwo, hżeścijaństwo
+Żywioł  - rzywioł
+Rządzić  - żądzić
+Chluba  - hluba
+Żywność  - rzywność
+Krzemianka  - kszemianka, kżemianka
+Żyrafa  - rzyrafa
+Trzask  - tszask, tżask
+Żywotność  - rzywotność
+Przysłowie  - pszysłowie, pżysłowie
+Chyżość  - hyżość, chyrzość, hyrzość
+Chwiejny  - hwiejny, chwjejny
+Chórzysta  - churzysta, hurzysta, chóżysta, chużysta
+Żarliwy  - rzarliwy
+Rzemyk - żemyk
+Żywiący  - rzywiący
+Krzepki  - kszepki, kżepki
+Wrzos  - wżos
+Żytni  - rzytni
+Brzęk  - bszęg, brzęg, bżęk, bżęg
+Chojrak  - hojrak, choirak
+Rzeźbić  - żeźbićm, rześbić
+Żyrandol  - rzyrandol
+Przedsionek  - pszedsionek, przedsioneg
+Krzewinka  - kszewinka, kżewinka
+Chrobot  - chrobod, hrobot, hrobod
+Chrypa  - hrypa
+Żałosny  - rzałosny
+Żarnowiec  - rzarnowiec
+Wrzeszczeć  - wżeszczeć 
+Żebrak  - rzebrak
+Rzępolenie  - żępolenie
+Rzeczywistość  - żeczywistość, rzeczywistoźć, żeczywistoźć
+Chrzcielnica  - hrzcielnica, chżcielnica, hżcielnica
+Żeliwny  - rzeliwny
+Żarzyć - rzarzyć, rzażyć, żażyć
+Chrapliwy  - hrapliwy
+Rzewność  - żewność, żewnoźć, rzewnoźć
+Wrzeciono  - wżeciono
+Przewrót  - pszewrót, pżewrót, przewrut, pszewrut, pżewrut
+Krzywda  - kszywda, kżywda
+Przyswajać  - pszyswajać, pżyswajać, przysfajać, pszysfajać
+Przerzucać  - pżerzucać, pżeżucać, przerzócać, przeżócać
+Rzezimieszek  - żezimieszek
+Chwytać  - hwytać
+Chybiać  - hybiać, chybiadź, hybiadź
+Chrząkać  - chżąkać, hrząkaćm hżąkać, chrzonkać, hrzonkać, chżonkać
+Żłobek  - rzłobek
+Życzenie  - rzyczenie
+Rzęsisty  - żęsisty
+Chichot  - hihot, hichot, chichod, chihot, chihod
+Żelazny  - rzelazny
+Przemijać  - pżemijać, pszemijać
+Wrzaskliwy  - wszaskliwy, wżaskliwy
+Żywotnik  - rzywotnik
+Przeżuwać  - pżeżuwać, przerzuwać, pżerzuwać, przeżówać, pżerzówać
+Chwila  - hwila
+Przeinaczać  - pszeinaczać, pżeinaczadź, przeinaczać
+Żółknąć  - żułkać, rzółknąćm żółknoć, rzółknoć
+Przeistoczenie  - pżeistoczenie, pszeistoczenie
+Rzeczoznawca  - żeczoznawca
+Żyrandolowy  - rzyrandolowy
+Żużel  - rzurzel, żurzel, rzużel
+Chrząstka  - hrząstka, chżąstka, hżąstka
+Przysłuchiwać - pszysłuwichać, pżysłóchiwać, przysłóchować, pszysłóchiwać
+Krzewienie  - kżewienie, kszewienie
+Żywiczy  - rzywiczy
+życzliwy - rzyczliwy
+Chybki  - hybki
+Żagiel  - rzagiel
+Życiorys  - rzyciorys
+Rzemieślnik  - żemieślnik
+Przepych  - pszsepych, pżepych
+Przeziębić - pszeziębić, pżeziębić
+Krzyżówka  - kżyżówka, kżyrzówka, krzyrzówka
+Chybotać - hybotać
+Żeglarstwo  - rzeglarstwo
+Przestępca  - pszestępca, pżestępca
+Przerzutka  - przeżutka, pżeżutka, pżerzutka, pszeżutka
+Żądło  - żondło, rządło, rzondło
+Żakiet  - rzakiet
+Przypowieść  - pżypowieść pszypowieść
+Przeobrażać  - pszeobrażać, pżeobrażać, przeobrarzać, pżeobrażać, pszeobrarzać
+Chwast  - hwast
+Chwytliwy  - hwytliwy
+Przepołowić  - pszepołowić, pżepołowić, przepołowidź, pszepołowidź
+gżegżółka - grzegłóżka, gżegrzółka, grzegrzółka, gżegrzułka, grzegżułka, gżegżułka

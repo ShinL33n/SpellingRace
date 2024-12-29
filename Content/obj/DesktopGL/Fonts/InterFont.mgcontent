@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Fonts/InterFont.spritefont</SourceFile>
-  <SourceTime>2024-12-28T22:40:43.2580113+01:00</SourceTime>
+  <SourceTime>2024-12-29T18:40:07.1074192+01:00</SourceTime>
   <DestFile>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Fonts/InterFont.xnb</DestFile>
-  <DestTime>2024-12-28T22:40:51.5216519+01:00</DestTime>
+  <DestTime>2024-12-29T18:40:10.0064687+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

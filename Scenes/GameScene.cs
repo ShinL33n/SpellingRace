@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,54 +7,38 @@ namespace SpellingRace.Scenes
     // JPWP: Scena odpowiadająca za wyświetlenie ekranu rozgrywki
     public class GameScene : Scene
     {
-        Texture2D gameBackground, playerTexture;
-
         private Background _background;
-        private Sprite _playerSprite;
-        // private Player _player;
+        private Player _player;
 
+        private Difficulty _difficulty;
 
         private MovementManager _movementManager;
-        private GameLoopManager _gameLoopManager;
+        private GatesManager _gatesManager;
+        private WordsManager _wordsManager;
+        private GameStateManager _gameStateManager;
+        private GameInfoDisplayManager _gameInfoDisplayManager;
 
 
-        public GameScene()
-        {
-
-        }
+        public GameScene(){}
 
         public override void LoadContent()
         {
-            gameBackground = _content.Load<Texture2D>("Media/Backgrounds/GameBackground");
-            playerTexture = _content.Load<Texture2D>("Textures/Game/Player");
+            CreatePlayer();
 
-            // _player = new Player{
-            //     Size = new(135, 230),
-            //     Position = new(windowCenter.X , windowSize.Y - _player.Size.X / 2),
-            //     Sprite = new(
-            //         _player.Position,
-            //         _player.Size,
-            //         _content.Load<Texture2D>("Textures/Game/Player"),
-            //         true
-            //     )
-            // };
+            _difficulty = Difficulty.NORMAL; // FROM SETTINGS
 
-            Vector2 playerSize = new(135, 230);
-            Vector2 playerPosition = new(windowCenter.X , windowSize.Y - playerSize.X / 2);
+            // _gameSettingsManager = new();
+            // ServiceProvider.Register(_gameSettingsLoader);
 
-            _playerSprite = new(
-                playerPosition,
-                playerSize,
-                playerTexture,
-                true
-            );
+            _gameStateManager = new();
+            ServiceProvider.Register(_gameStateManager);
             
-            _background = new(gameBackground);
+            _gatesManager = new();
+            _wordsManager = new();
+            _gameInfoDisplayManager = new();
 
-            _movementManager = new(playerPosition);
-            //_movementManager = new(_player.Position);
-
-            _gameLoopManager = new();
+            _background = new(_content.Load<Texture2D>("Media/Backgrounds/GameBackground"));
+            _movementManager = new(_player.Position);
         }
 
         public override void Update(GameTime gameTime)
@@ -62,18 +47,32 @@ namespace SpellingRace.Scenes
             if(InputManager.WasKeyTriggered(Keys.Escape)) 
                 Game1.SceneManager.AddScene(new PauseScene());
 
+
             _movementManager.Update(gameTime);
-            _playerSprite.Update(_movementManager.GetPlayerPosition());
-            //_player.Sprite.Update(_movementManager.GetPlayerPosition());
-            _gameLoopManager.Update(gameTime);
+            _player.Sprite.Update(_movementManager.GetPlayerPosition());
+            _gatesManager.Update();
+            _gameStateManager.Update(gameTime);
+            _gameInfoDisplayManager.Update(gameTime);
         }
 
         public override void Draw()
         {
             _background.Draw();
-            _gameLoopManager.Draw();
-            _playerSprite.Draw();
-            //_player.Sprite.Draw();
+            _gatesManager.Draw();
+            _player.Sprite.Draw();
+            _gameInfoDisplayManager.Draw();
+        }
+
+        private void CreatePlayer()
+        {
+            _player = new Player { Size = new(135, 230) };
+            _player.Position = new(windowCenter.X , windowSize.Y - _player.Size.X / 2);
+            _player.Sprite = new(
+                _player.Position,
+                _player.Size,
+                _content.Load<Texture2D>("Textures/Game/Player"),
+                true
+            );
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SpellingRace.Models
     {    
         // public float PerspectiveModifier { get; set; }
         public string Word { get; set; }
-        public List<string> IncorrectForms { get; set; }
+        //public List<string> IncorrectForms { get; set; }
         // public int GatesQuantity { get; set; }
     }
 }

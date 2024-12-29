@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Fonts/OpenDyslexicFont.spritefont</SourceFile>
-  <SourceTime>2024-12-28T22:40:38.1396839+01:00</SourceTime>
+  <SourceTime>2024-12-29T18:39:57.0793038+01:00</SourceTime>
   <DestFile>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Fonts/OpenDyslexicFont.xnb</DestFile>
-  <DestTime>2024-12-28T22:40:51.5907478+01:00</DestTime>
+  <DestTime>2024-12-29T18:40:01.967234+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

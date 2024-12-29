@@ -13,8 +13,11 @@ namespace SpellingRace.Gui.Elements
         private bool _alignToCenterPoint;
         private Color _textColor;
         private float _scale;
-
-
+        private Vector2 vector21;
+        private Vector2 vector22;
+        private Texture2D texture2D;
+        private SpriteFont spriteFont;
+        private bool v;
         private readonly SpriteBatch _spriteBatch;
         private readonly GraphicsDevice _graphicsDevice;
 
@@ -65,6 +68,14 @@ namespace SpellingRace.Gui.Elements
             _alignToCenterPoint = alignToCenterPoint;
         }
 
+        public Sprite(Vector2 vector21, Vector2 vector22, Texture2D texture2D, SpriteFont spriteFont, bool v)
+        {
+            this.vector21 = vector21;
+            this.vector22 = vector22;
+            this.texture2D = texture2D;
+            this.spriteFont = spriteFont;
+            this.v = v;
+        }
 
         public void Update(Vector2? position = null, Vector2? size = null)
         {
@@ -87,7 +98,8 @@ namespace SpellingRace.Gui.Elements
         {
             _spriteBatch.Draw(_texture, _spriteBoundaries, Color.White);
 
-            if(_font != null && _text != null) _spriteBatch.DrawString(_font, _text, _textPosition, Color.White, 0f, _textSize / 2, _scale, SpriteEffects.None, 0f);
+            if(_font != null && _text != null) 
+                _spriteBatch.DrawString(_font, _text, _textPosition, Color.White, 0f, _textSize / 2, _scale, SpriteEffects.None, 0f);
         }
     }
 }

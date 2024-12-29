@@ -10,10 +10,12 @@
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Media/Backgrounds/MenuBackground.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Media/Backgrounds/OptionsBackground.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/Gate.png</File>
+    <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/IngameMenu.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/Player.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/MenuOptionBorder.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

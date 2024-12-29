@@ -36,6 +36,7 @@ with.
     and "Bold, Italic", and are case sensitive.
     -->
     <Style>Bold</Style>
+	<DefaultCharacter>?</DefaultCharacter>
 
     <!--
     If you uncomment this line, the default character will be substituted if you draw
@@ -59,6 +60,10 @@ with.
 			<Start>&#260;</Start> <!-- Polski znak "Ą" -->
 			<End>&#382;</End> <!-- Polski znak "Ź" -->
 		</CharacterRegion>
+		<CharacterRegion>
+			<Start>ó</Start>
+			<End>ó</End> <!-- Dodanie tylko znaku ó -->
+		 </CharacterRegion>
     </CharacterRegions>
   </Asset>
 </XnaContent>

@@ -4,8 +4,7 @@
 		"level": 0,
 		"forms": [
 			{
-				"form": 2,
-				"words": [
+				"2": [
 					{"word": "żaba", "incorrect_forms": ["rzaba"]},
 					{"word": "zupa", "incorrect_forms": ["zópa"]},
 					{"word": "król", "incorrect_forms": ["krul"]},
@@ -18,8 +17,7 @@
 				]
 			},
 			{
-				"form": 3,
-				"words": [
+				"3": [
 					{"word": "żółty", "incorrect_forms": ["żułty", "rzułty"]}
 				]
 			}
@@ -29,8 +27,7 @@
 		"level": 1,
 		"forms": [
 			{
-				"form": 2,
-				"words": [
+				"2": [
 					{"word": "wóz", "incorrect_forms": ["wuz"]},
 					{"word": "wózek", "incorrect_forms": ["wuzek"]},
 					{"word": "chłopak", "incorrect_forms": ["hłopak"]},
@@ -41,21 +38,18 @@
 				]
 			},
 			{
-				"form": 3,
-				"words": [
+				"3": [
 					{"word": "wieża", "incorrect_forms": ["wierza", "wiesza"]}	
 				]
 			},
 			{
-				"form": 4,
-				"words": [
+				"4": [
 					{"word": "brzydki", "incorrect_forms": ["bżydki", "brzytki", "bżytki"]},
 					{"word": "róża", "incorrect_forms": ["ruża", "rórza", "rurza"]}
 				]
 			},
 			{
-				"form": 6,
-				"words": [
+				"6": [
 					{"word": "rzucać", "incorrect_forms": ["żucać", "rzócać", "żócać", "rzucadź", "żucadź"]}
 				]
 			}
@@ -65,22 +59,19 @@
 		"level": 2,
 		"forms": [
 			{	
-				"form": 2,
-				"words": [
+				"2": [
 					{"word": "wróbel", "incorrect_forms": ["wrubel"]},
 					{"word": "powód", "incorrect_forms": ["powud"]}					
 				]
 			},	
 			{
-				"form": 3,
-				"words": [
+				"3": [
 					{"word": "jabłko", "incorrect_forms": ["jabko", "jabułko"]},
 					{"word": "przyjaciel", "incorrect_forms": ["pszyjaciel", "pżyjaciel"]}				
 				]
 			},
 			{
-				"form": 4,
-				"words": [
+				"4": [
 					{"word": "rzeźba", "incorrect_forms": ["żeźba", "rześba", "żeśba"]},
 					{"word": "chłód", "incorrect_forms": ["hłód", "chłud", "hłud"]},
 					{"word": "grzyb", "incorrect_forms": ["gżyb", "grzyp", "gżyp"]},
@@ -89,8 +80,7 @@
 				]
 			},
 			{
-				"form": 5,
-				"words": [
+				"5": [
 					{"word": "ciągnąć", "incorrect_forms": ["ciongnąć", "ciongnonć", "ciągnonć", "ciągnądź"]}
 				]
 			}
@@ -100,31 +90,27 @@
 		"level": 3,
 		"forms": [
 			{
-				"form": 3,
-				"words": [
+				"3": [
 					{"word": "strzał", "incorrect_forms": ["stżał", "stszał"]},
 					{"word": "wrzesień", "incorrect_forms": ["wżesień", "wrzesięń"]},
 					{"word": "pożar", "incorrect_forms": ["porzar", "poszar"]}
 				]
 			},
 			{
-				"form": 4,
-				"words": [
+				"4": [
 					{"word": "przerażenie", "incorrect_forms": ["pżerażenie", "przerarzenie", "pżerarzenie"]},
 					{"word": "chmura", "incorrect_forms": ["chmóra", "hmura", "hmóra"]},
 					{"word": "wrócić", "incorrect_forms": ["wrucić", "wrócidź", "wrucidź"]}
 				]
 			},
 			{
-				"form": 5,
-				"words": [
+				"5": [
 					{"word": "mężczyzna", "incorrect_forms": ["menżczyzna", "męrzczyzna", "menszczyzna", "męszczyzna"]}
 				]
 			},
 			{
-				"form": 8,
-				"words": [
-					{"word": "żółw", "incorrect_forms": ["żółf", "żułw", "rzółw", "rzułw", "rzułf", "żułf", "rzółf"]}
+				"8": [
+					{"word": "żółw", "incorrect_forms": ["żółf", "żułw", "rzółw", "rzułw", "rzułf", "żułf", "rzułf"]}
 				]
 			}
 		]
@@ -133,23 +119,20 @@
 		"level": 4,
 		"forms": [
 			{
-				"form": 2,
-				"words": [
+				"2": [
 					{"word": "rzezimieszek", "incorrect_forms": ["żezimieszek"]},
 					{"word": "żyrafa", "incorrect_forms": ["rzyrafa"]},
 					{"word": "żywioł", "incorrect_forms": ["rzywioł"]}
 				]
 			},
 			{
-				"form": 4,
-				"words": [
+				"4": [
 					{"word": "chrapać", "incorrect_forms": ["hrapać", "chrapadź", "hrapadź"]},		
 					{"word": "chrząstka", "incorrect_forms": ["hrząstka", "chżąstka", "hżąstka"]}
 				]
 			},
 			{
-				"form": 6,
-				"words": [
+				"6": [
 					{"word": "dróżka", "incorrect_forms": ["drużka", "druszka", "drórzka", "drurzka", "drószka"]}
 				]
 			}
@@ -159,28 +142,24 @@
 		"level": 5,
 		"forms": [
 			{
-				"form": 3,
-				"words": [
+				"3": [
 					{"word": "chrzęszczący", "incorrect_forms": ["hrzęszczący", "chszęszczący"]},
 					{"word": "świerszcz", "incorrect_forms": ["świrrzcz", "świerżcz"]}
 				]
 			},
 			{
-				"form": 4,
-				"words": [
+				"4": [
 					{"word": "chrzan", "incorrect_forms": ["hrzan", "hżan", "chżan"]}
 				]
 			},
 			{
-				"form": 5,
-				"words": [
+				"5": [
 					{"word": "chrząszcz", "incorrect_forms": ["chżąszcz", "chrzążcz", "chrząrzcz", "chsząszcz"]},
 					{"word": "chrzestny", "incorrect_forms": ["chżestny", "chszestny", "hrzestny", "hżestny"]}
 				]
 			},
 			{
-				"form": 7,
-				"words": [
+				"7": [
 					{"word": "gżegżółka", "incorrect_forms": ["grzegłóżka", "gżegrzółka", "grzegrzółka", "gżegrzułka", "grzegżułka", "gżegżułka"]},
 					{"word": "rzeżucha", "incorrect_forms": ["żeżucha", "rzerzucha", "żerzucha", "rzeżócha", "żerzócha", "żeżócha"]}
 				]

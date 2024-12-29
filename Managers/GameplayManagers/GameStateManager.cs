@@ -10,7 +10,7 @@ namespace SpellingRace.Managers.GameplayManagers
         {
             _gameState = new GameState {
                 Time = TimeSpan.Zero,
-                Level = 1,
+                Level = 3,
                 GatesPassed = 0,
                 Life = 5, // DIFFICULTY LEVEL PROPERTY
                 Score = 0,
@@ -20,6 +20,8 @@ namespace SpellingRace.Managers.GameplayManagers
 
         public void Update(GameTime gameTime)
         {
+            _gameState.Time += gameTime.ElapsedGameTime;
+
             if(_gameState.GatesPassed >= 10) {
                 _gameState.Level++;
                 _gameState.SpeedMultiplier *= 1.4f; // DIFFICULTY LEVEL PROPERTY
@@ -29,6 +31,26 @@ namespace SpellingRace.Managers.GameplayManagers
         public float GetSpeedMultiplier()
         {
             return _gameState.SpeedMultiplier;
+        }
+
+        public int GetLevel()
+        {
+            return _gameState.Level;
+        }
+
+        public int GetLife()
+        {
+            return _gameState.Life;
+        }
+
+        public int GetScore()
+        {
+            return _gameState.Score;
+        }
+
+        public TimeSpan GetTime()
+        {
+            return _gameState.Time;
         }
 
     }
