@@ -99,6 +99,18 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Game/Player.png
 
+#begin Textures/Gui/Exit.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Gui/Exit.png
+
 #begin Textures/Gui/MenuOptionBorder.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -110,4 +122,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/Gui/MenuOptionBorder.png
+
+#begin Textures/Gui/OptionBorder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Gui/OptionBorder.png
 

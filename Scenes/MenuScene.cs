@@ -9,8 +9,7 @@ namespace SpellingRace.Scenes
     public class MenuScene : Scene
     {
     
-        Texture2D menuOptionBorder, menuBackground;
-        SpriteFont interFont, openDyslexicFont;
+        Texture2D menuOptionBorderTexture, menuBackgroundTexture, exitTexture;
         
         private Dictionary<string, Button> _buttons;
         private Background _background;
@@ -20,58 +19,15 @@ namespace SpellingRace.Scenes
 
         public override void LoadContent()
         {
-            interFont = _content.Load<SpriteFont>("Fonts/InterFont");
-            openDyslexicFont = _content.Load<SpriteFont>("Fonts/OpenDyslexicFont");
+            sceneTitle = "WYŚCIG Z ORTOGRAFIĄ";
 
-            menuOptionBorder = _content.Load<Texture2D>("Textures/Gui/MenuOptionBorder");
-            menuBackground = _content.Load<Texture2D>("Media/Backgrounds/MenuBackground");
+            menuOptionBorderTexture = _content.Load<Texture2D>("Textures/Gui/menuOptionBorder");
+            menuBackgroundTexture = _content.Load<Texture2D>("Media/Backgrounds/MenuBackground");
+            exitTexture = _content.Load<Texture2D>("Textures/Gui/Exit");
 
-            _background = new(menuBackground);
+            _background = new(menuBackgroundTexture);
 
-            
-            Vector2 buttonSize = new(581, 116);
-
-            _buttons = new() {
-                 ["PlayButton"] = new Button(
-                    new Vector2(windowCenter.X,
-                                windowCenter.Y - 1.5f * buttonSize.Y),
-                    buttonSize,
-                    menuOptionBorder,
-                    interFont,
-                    Color.White,
-                    "Graj",
-                    Color.White,
-                    Color.Gray,
-                    Color.DarkGray,
-                    true
-                ),
-                ["SettingsButton"] = new Button(
-                    new Vector2(windowCenter.X,
-                                windowCenter.Y),
-                    buttonSize,
-                    menuOptionBorder,
-                    interFont,
-                    Color.White,
-                    "Ustawienia",
-                    Color.White,
-                    Color.Gray,
-                    Color.DarkGray,
-                    true
-                ),
-                ["HelpButton"] = new Button(
-                    new Vector2(windowCenter.X,
-                                windowCenter.Y + 1.5f * buttonSize.Y),
-                    buttonSize,
-                    menuOptionBorder,
-                    interFont,
-                    Color.White,
-                    "Pomoc",
-                    Color.White,
-                    Color.Gray,
-                    Color.DarkGray,
-                    true
-                )
-            };
+            AddButtons();
         }
 
         public override void Update(GameTime gameTime)
@@ -94,13 +50,80 @@ namespace SpellingRace.Scenes
             {
                 Game1.SceneManager.AddScene(new HelpScene());
             }
+            if (_buttons["ExitButton"].Clicked())
+            {
+                SceneQuited = true;
+            }
         }
 
         public override void Draw()
         {
             _background.Draw();
-            
+
             foreach(var button in _buttons.Values) { button.Draw(); }
+            
+            _spriteBatch.DrawString(openDyslexicFont, sceneTitle, new Vector2(windowCenter.X - openDyslexicFont.MeasureString(sceneTitle).X / 2, 20), Color.White);
+        }
+
+
+        private void AddButtons()
+        {
+            Vector2 buttonSize = new(581, 116);
+            Vector2 exitButtonSize = new(96, 96);
+
+            _buttons = new() {
+                 ["PlayButton"] = new Button(
+                    new Vector2(windowCenter.X,
+                                windowCenter.Y - 1.5f * buttonSize.Y),
+                    buttonSize,
+                    menuOptionBorderTexture,
+                    interFont,
+                    Color.White,
+                    "Graj",
+                    Color.White,
+                    Color.Gray,
+                    Color.DarkGray,
+                    true
+                ),
+                ["SettingsButton"] = new Button(
+                    new Vector2(windowCenter.X,
+                                windowCenter.Y),
+                    buttonSize,
+                    menuOptionBorderTexture,
+                    interFont,
+                    Color.White,
+                    "Ustawienia",
+                    Color.White,
+                    Color.Gray,
+                    Color.DarkGray,
+                    true
+                ),
+                ["HelpButton"] = new Button(
+                    new Vector2(windowCenter.X,
+                                windowCenter.Y + 1.5f * buttonSize.Y),
+                    buttonSize,
+                    menuOptionBorderTexture,
+                    interFont,
+                    Color.White,
+                    "Pomoc",
+                    Color.White,
+                    Color.Gray,
+                    Color.DarkGray,
+                    true
+                ),
+                ["ExitButton"] = new Button(
+                    windowSize - exitButtonSize,
+                    exitButtonSize,
+                    exitTexture,
+                    interFont,
+                    Color.White,
+                    "",
+                    Color.White,
+                    Color.Gray,
+                    Color.DarkGray,
+                    false
+                )
+            };
         }
     }
 }

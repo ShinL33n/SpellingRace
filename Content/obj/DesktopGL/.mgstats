@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/IngameMenu.png","c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Textures/Game/IngameMenu.xnb","TextureProcessor","Texture2DContent",48534,592565,0,1091361
+"c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/OptionBorder.png","c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Textures/Gui/OptionBorder.xnb","TextureProcessor","Texture2DContent",705,80085,0,119295

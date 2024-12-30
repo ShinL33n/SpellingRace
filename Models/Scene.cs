@@ -15,6 +15,10 @@ namespace SpellingRace.Models
         protected Vector2 windowSize;
         protected Vector2 windowCenter;
 
+        protected SpriteFont interFont, openDyslexicFont;
+
+        protected string sceneTitle;
+
         public Scene() 
         { 
             _content = ServiceProvider.Resolve<ContentManager>() ?? throw new NullReferenceException("ContentManager not registered in ServiceProvider.");
@@ -26,17 +30,10 @@ namespace SpellingRace.Models
             windowSize = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
             windowCenter = new(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
 
+            interFont = _content.Load<SpriteFont>("Fonts/InterFont");
+            openDyslexicFont = _content.Load<SpriteFont>("Fonts/OpenDyslexicFont");
+
             LoadContent();
         }
-
-        // protected virtual void UnloadContent()
-        // {
-            
-        // }
-
-        // public virtual void End()
-        // {
-        
-        // }
     }
 }

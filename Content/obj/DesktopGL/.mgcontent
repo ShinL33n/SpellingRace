@@ -12,9 +12,13 @@
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/Gate.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/IngameMenu.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/Player.png</File>
+    <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/Exit.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/MenuOptionBorder.png</File>
+    <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/OptionBorder.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

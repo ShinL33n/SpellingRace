@@ -16,6 +16,8 @@ namespace SpellingRace.Managers.GameplayManagers
                 Score = 0,
                 SpeedMultiplier = 3f // DIFFICULTY LEVEL PROPERTY
             };
+
+            ServiceProvider.Register(_gameState);
         }
 
         public void Update(GameTime gameTime)

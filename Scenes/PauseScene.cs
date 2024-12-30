@@ -8,7 +8,7 @@ namespace SpellingRace.Scenes
     public class PauseScene : Scene 
     {
         Texture2D menuOptionBorder, menuBackground;
-        SpriteFont interFont, openDyslexicFont;
+        //SpriteFont interFont, openDyslexicFont;
         
         private Dictionary<string, Button> _buttons;
         private Background _background;

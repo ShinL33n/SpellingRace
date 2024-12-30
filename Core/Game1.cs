@@ -12,6 +12,7 @@ namespace SpellingRace.Core
         public static SceneManager SceneManager;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private GameStateManager _gameStateManager;
 
 
         public Game1()
@@ -20,6 +21,7 @@ namespace SpellingRace.Core
             IsMouseVisible = true;
             _graphics = new(this);
             SceneManager = new();
+            _gameStateManager = new();
         }
 
         protected override void Initialize()
@@ -48,6 +50,7 @@ namespace SpellingRace.Core
         protected override void Update(GameTime gameTime)
         {
             SceneManager.Update(gameTime);
+            _gameStateManager.Update(gameTime);
 
             if(SceneManager.IsEmpty) Exit();
 

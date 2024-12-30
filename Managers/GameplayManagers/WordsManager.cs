@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -34,7 +32,7 @@ namespace SpellingRace.Managers.GameplayManagers
                 case Difficulty.NORMAL: // Need a word with 3 or more forms
                     foreach (var difficultyLevel in _wordsList.DifficultyLevels)
                     {
-                        if(difficultyLevel.Level == level)
+                        if(difficultyLevel.Level == level) // TO CHANGE
                         {
                             foreach (var form in difficultyLevel.Forms)
                             {

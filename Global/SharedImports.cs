@@ -1,4 +1,5 @@
 ﻿global using Microsoft.Xna.Framework;
+global using System.Collections.Generic;
 
 global using SpellingRace.Core;
 global using SpellingRace.Global;

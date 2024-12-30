@@ -70,3 +70,5 @@ C:\Pliki\Dokumenty\Programming Projects\C#\SpellingRace\obj\Debug\net8.0\Spellin
 C:\Pliki\Dokumenty\Programming Projects\C#\SpellingRace\obj\Debug\net8.0\ref\SpellingRace.dll
 C:\Pliki\Dokumenty\Programming Projects\C#\SpellingRace\bin\Debug\net8.0\Content\Textures\Game\Gate.xnb
 C:\Pliki\Dokumenty\Programming Projects\C#\SpellingRace\bin\Debug\net8.0\Content\Textures\Game\IngameMenu.xnb
+C:\Pliki\Dokumenty\Programming Projects\C#\SpellingRace\bin\Debug\net8.0\Content\Textures\Gui\Exit.xnb
+C:\Pliki\Dokumenty\Programming Projects\C#\SpellingRace\bin\Debug\net8.0\Content\Textures\Gui\OptionBorder.xnb

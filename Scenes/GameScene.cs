@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -10,13 +11,15 @@ namespace SpellingRace.Scenes
         private Background _background;
         private Player _player;
 
-        private Difficulty _difficulty;
+        //private Difficulty _difficulty;
 
         private MovementManager _movementManager;
         private GatesManager _gatesManager;
         private WordsManager _wordsManager;
         private GameStateManager _gameStateManager;
         private GameInfoDisplayManager _gameInfoDisplayManager;
+        //private GameState _gameState;
+        private SettingsManager _settingsManager;
 
 
         public GameScene(){}
@@ -25,13 +28,17 @@ namespace SpellingRace.Scenes
         {
             CreatePlayer();
 
-            _difficulty = Difficulty.NORMAL; // FROM SETTINGS
+            //_difficulty = Difficulty.NORMAL; // FROM SETTINGS
 
             // _gameSettingsManager = new();
             // ServiceProvider.Register(_gameSettingsLoader);
 
-            _gameStateManager = new();
-            ServiceProvider.Register(_gameStateManager);
+                //_gameStateManager = new();
+            //ServiceProvider.Register(_gameStateManager);
+            //_gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
+
+            _settingsManager = new();
+            _settingsManager.LoadSettings();
             
             _gatesManager = new();
             _wordsManager = new();
@@ -51,7 +58,7 @@ namespace SpellingRace.Scenes
             _movementManager.Update(gameTime);
             _player.Sprite.Update(_movementManager.GetPlayerPosition());
             _gatesManager.Update();
-            _gameStateManager.Update(gameTime);
+            //_gameStateManager.Update(gameTime);
             _gameInfoDisplayManager.Update(gameTime);
         }
 
@@ -62,6 +69,8 @@ namespace SpellingRace.Scenes
             _player.Sprite.Draw();
             _gameInfoDisplayManager.Draw();
         }
+
+
 
         private void CreatePlayer()
         {

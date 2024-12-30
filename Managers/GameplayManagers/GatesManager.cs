@@ -11,7 +11,8 @@ namespace SpellingRace.Managers.GameplayManagers
     {
         private GraphicsDeviceManager _graphics;
         private ContentManager _content;
-        private GameStateManager _gameStateManager;
+        //private GameStateManager _gameStateManager;
+        private GameState _gameState;
         private WordsManager _wordsManager;
 
         Difficulty difficulty;
@@ -29,7 +30,8 @@ namespace SpellingRace.Managers.GameplayManagers
         {
             _graphics = ServiceProvider.Resolve<GraphicsDeviceManager>() ?? throw new NullReferenceException("GraphicsDeviceManager not registered in ServiceProvider.");
             _content = ServiceProvider.Resolve<ContentManager>() ?? throw new NullReferenceException("ContentManager not registered in ServiceProvider.");
-            _gameStateManager = ServiceProvider.Resolve<GameStateManager>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
+            //_gameStateManager = ServiceProvider.Resolve<GameStateManager>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
+            _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
             _wordsManager = new();
             
             windowSize = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
@@ -78,7 +80,8 @@ namespace SpellingRace.Managers.GameplayManagers
             }
 
 
-            _wordsList = _wordsManager.GetWords(difficulty, _gameStateManager.GetLevel());
+            // _wordsList = _wordsManager.GetWords(difficulty, _gameStateManager.GetLevel());
+            _wordsList = _wordsManager.GetWords(difficulty, _gameState.Level);
             _gates = CreateGates(_wordsList);
 
         }
@@ -186,7 +189,8 @@ namespace SpellingRace.Managers.GameplayManagers
             }
 
             if(_gates["left"].Position.Y >= windowSize.Y) {
-                _wordsList = _wordsManager.GetWords(difficulty, _gameStateManager.GetLevel());
+                // _wordsList = _wordsManager.GetWords(difficulty, _gameStateManager.GetLevel());
+                _wordsList = _wordsManager.GetWords(difficulty, _gameState.Level);
                 _gates = CreateGates(_wordsList);
             }
         }
@@ -218,25 +222,27 @@ namespace SpellingRace.Managers.GameplayManagers
 
         private void NormalDifficultyGatesMovement() 
         {
+            float SpeedMultiplier = _gameState.SpeedMultiplier;
+
             // Left gate movement
             _gates["left"].Position = new(
                 windowSize.X / 2 - 180 - _gates["left"].Size.X / 2 - (float)Math.Tan(13.64*Math.PI/180) * (_gates["left"].Position.Y + _gates["left"].Size.Y), 
-                _gates["left"].Position.Y + (1 * _gameStateManager.GetSpeedMultiplier())
+                _gates["left"].Position.Y + (1 * SpeedMultiplier)
             );
 
             // Middle gate movement
-            _gates["middle"].Position = new(windowSize.X / 2 - _gates["middle"].Size.X / 2, _gates["middle"].Position.Y + (1 * _gameStateManager.GetSpeedMultiplier()));
+            _gates["middle"].Position = new(windowSize.X / 2 - _gates["middle"].Size.X / 2, _gates["middle"].Position.Y + (1 * SpeedMultiplier));
 
             // Right gate movement
             _gates["right"].Position = new(
                 windowSize.X / 2 + 180 - _gates["right"].Size.X / 2 + (float)Math.Tan(13.64*Math.PI/180) * (_gates["right"].Position.Y + _gates["right"].Size.Y), 
-                _gates["right"].Position.Y + (1 * _gameStateManager.GetSpeedMultiplier())
+                _gates["right"].Position.Y + (1 * SpeedMultiplier)
             );
 
             foreach(var gate in _gates.Values) {
                 gate.Size = (gate.Size.X <= gateMaxSize.X && gate.Size.Y <= gateMaxSize.Y) 
-                ? new(gate.Size.X + _gameStateManager.GetSpeedMultiplier()*(gateMaxSize.X - gateMinSize.X)/windowSize.X, 
-                gate.Size.Y + _gameStateManager.GetSpeedMultiplier()*(gateMaxSize.Y - gateMinSize.Y)/(windowSize.Y + gateMinSize.Y)) 
+                ? new(gate.Size.X + SpeedMultiplier * (gateMaxSize.X - gateMinSize.X) / windowSize.X, 
+                gate.Size.Y + SpeedMultiplier * (gateMaxSize.Y - gateMinSize.Y) / (windowSize.Y + gateMinSize.Y)) 
                 : gateMaxSize;
 
                 gate.Sprite.Update(gate.Position, gate.Size);
