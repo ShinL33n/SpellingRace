@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -36,7 +37,8 @@ namespace SpellingRace.Managers.GameplayManagers
             
             windowSize = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
 
-            difficulty = Difficulty.NORMAL; // DIFFICULTY LEVEL 
+            //difficulty = Difficulty.NORMAL; // DIFFICULTY LEVEL 
+            difficulty = _gameState.Difficulty;
 
             switch (difficulty){
                 case Difficulty.EASY:
@@ -90,20 +92,21 @@ namespace SpellingRace.Managers.GameplayManagers
         {
             Dictionary<string, Gate> gates = new();
 
-            Random random = new();
-            List<string> shuffledWords = words.OrderBy(x => random.Next()).ToList();
+            // Random random = new();
+            // List<string> shuffledWords = words.OrderBy(x => random.Next()).ToList();
+            //List<string> shuffledWords = words;
             
             switch (difficulty){
                 case Difficulty.EASY:
                     gates.Add("left", new Gate{
                         Position = _positions[0],
                         Size = gateMinSize,
-                        Word = shuffledWords[0]
+                        Word = words[0]
                     });
                     gates.Add("right", new Gate{
                         Position = _positions[1],
                         Size = gateMinSize,
-                        Word = shuffledWords[1]
+                        Word = words[1]
                     });
                     SpriteCreateHelper( gates["left"]);
                     SpriteCreateHelper( gates["right"]);
@@ -114,17 +117,17 @@ namespace SpellingRace.Managers.GameplayManagers
                     gates.Add("left", new Gate{
                         Position = _positions[0],
                         Size = gateMinSize,
-                        Word = shuffledWords[0]
+                        Word = words[0]
                     });
                     gates.Add("middle", new Gate{
                         Position = _positions[1],
                         Size = gateMinSize,
-                        Word = shuffledWords[1]
+                        Word = words[1]
                     });
                     gates.Add("right", new Gate{
                         Position = _positions[2],
                         Size = gateMinSize,
-                        Word = shuffledWords[2]
+                        Word = words[2]
                     });
                     SpriteCreateHelper( gates["left"]);
                     SpriteCreateHelper( gates["middle"]);
@@ -136,22 +139,22 @@ namespace SpellingRace.Managers.GameplayManagers
                     gates.Add("left", new Gate{
                         Position = _positions[0],
                         Size = gateMinSize,
-                        Word = shuffledWords[0]
+                        Word = words[0]
                     });
                     gates.Add("middleLeft", new Gate{
                         Position = _positions[1],
                         Size = gateMinSize,
-                        Word = shuffledWords[1]
+                        Word = words[1]
                     });
                     gates.Add("middleRight", new Gate{
                         Position = _positions[2],
                         Size = gateMinSize,
-                        Word = shuffledWords[2]
+                        Word = words[2]
                     });
                     gates.Add("right", new Gate{
                         Position = _positions[3],
                         Size = gateMinSize,
-                        Word = shuffledWords[3]
+                        Word = words[3]
                     });
                     SpriteCreateHelper( gates["left"]);
                     SpriteCreateHelper( gates["middleLeft"]);
@@ -198,6 +201,21 @@ namespace SpellingRace.Managers.GameplayManagers
         public void Draw()
         {
             foreach(var gate in _gates.Values) gate.Sprite.Draw();
+        }
+
+        public float GetGatesYPosition()
+        {
+            return _gates["left"].Position.Y;
+        }
+
+        public int GetCorrectWordGateSegment()
+        {
+            return _wordsList.IndexOf(_wordsManager.GetCorrectWord());
+        }
+
+        public string GetCorrectWord()
+        {
+            return _wordsManager.GetCorrectWord();
         }
 
         private void SpriteCreateHelper(Gate gate){

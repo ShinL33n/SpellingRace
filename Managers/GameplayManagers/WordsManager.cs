@@ -11,11 +11,14 @@ namespace SpellingRace.Managers.GameplayManagers
         private readonly string _jsonContent;
         private readonly WordsList _wordsList;
 
+        private string _correctWord;
+
         public WordsManager()
         {
             _filePath = Path.Combine(AppContext.BaseDirectory, "Content", "Resources/words.json");
             _jsonContent = File.ReadAllText(_filePath);
             _wordsList = JsonSerializer.Deserialize<WordsList>(_jsonContent);
+            _correctWord = string.Empty;
         }
 
         public List<string> GetWords(Difficulty difficulty, int level)
@@ -24,60 +27,155 @@ namespace SpellingRace.Managers.GameplayManagers
             Dictionary<string, List<string>> wordWithForms = new();
             Random random = new();
 
-            switch(difficulty)
+            foreach (var difficultyLevel in _wordsList.DifficultyLevels)
             {
-                case Difficulty.EASY: // Need a word with 2 or more forms
-                    break;
-
-                case Difficulty.NORMAL: // Need a word with 3 or more forms
-                    foreach (var difficultyLevel in _wordsList.DifficultyLevels)
+                if(difficultyLevel.Level == level) // TO CHANGE
+                {
+                    foreach (var form in difficultyLevel.Forms)
                     {
-                        if(difficultyLevel.Level == level) // TO CHANGE
+                        if(form.FormNumber >= (int)difficulty + 2)
                         {
-                            foreach (var form in difficultyLevel.Forms)
+                            foreach (var word in form.Words)
                             {
-                                if(form.FormNumber >= (int)difficulty + 2)
+                                List<string> wordForms = new();
+                            
+                                foreach (var incorrectForm in word.IncorrectForms)
                                 {
-                                    foreach (var word in form.Words)
-                                    {
-                                        List<string> wordForms = new();
-                                    
-                                        foreach (var incorrectForm in word.IncorrectForms)
-                                        {
-                                            wordForms.Add(incorrectForm);
-                                        }
-                                        
-                                        List<string> shuffledWordForms = wordForms.OrderBy(x => random.Next()).ToList();
-            
+                                    wordForms.Add(incorrectForm);
+                                }
+                                
+                                List<string> shuffledWordForms = wordForms.OrderBy(x => random.Next()).ToList();
+    
+                                switch(difficulty)
+                                {
+                                    case Difficulty.EASY:
                                         wordWithForms.Add(
                                             word.Word, 
                                             new List<string> { 
                                                 shuffledWordForms[0],
-                                                shuffledWordForms[1] 
                                             }
                                         );
-                                    }
+                                        break;
+
+                                    case Difficulty.NORMAL:
+                                        wordWithForms.Add(
+                                            word.Word, 
+                                            new List<string> { 
+                                                shuffledWordForms[0],
+                                                shuffledWordForms[1]
+                                            }
+                                        );
+                                        break;
+
+                                    case Difficulty.HARD:
+                                        wordWithForms.Add(
+                                            word.Word, 
+                                            new List<string> { 
+                                                shuffledWordForms[0],
+                                                shuffledWordForms[1],
+                                                shuffledWordForms[2]
+                                            }
+                                        );
+                                        break;
+
+                                    default:
+                                        throw new Exception("Cannot specify difficulty to create word list.");
                                 }
                             }
                         }
                     }
-                    break;
-
-                case Difficulty.HARD: // Need a word with 4 or more forms
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException("Difficulty level not set.");
-
+                }
             }
+            
 
             Dictionary<string, List<string>> shuffledWordWithForms = wordWithForms.OrderBy(x => random.Next()).ToDictionary(x => x.Key, x => x.Value);
 
-            words.Add(shuffledWordWithForms.ElementAt(0).Key.ToString());
+            _correctWord = shuffledWordWithForms.ElementAt(0).Key.ToString();
+
+            words.Add(_correctWord);
             words.Add(shuffledWordWithForms.ElementAt(0).Value[0].ToString());
             words.Add(shuffledWordWithForms.ElementAt(0).Value[1].ToString());
 
+            words = words.OrderBy(x => random.Next()).ToList();
+
             return words;
         }
+
+        public string GetCorrectWord()
+        {
+            return _correctWord;
+        }
+
+
+        // private Dictionary<string, List<string>> WordsHelper(WordsList _wordsList, Difficulty difficulty, int level)
+        // {
+        //     Dictionary<string, List<string>> wordWithForms = new();
+
+        //     foreach (var difficultyLevel in _wordsList.DifficultyLevels)
+        //     {
+        //         if(difficultyLevel.Level == level) // TO CHANGE
+        //         {
+        //             foreach (var form in difficultyLevel.Forms)
+        //             {
+        //                 if(form.FormNumber >= (int)difficulty + 2)
+        //                 {
+        //                     foreach (var word in form.Words)
+        //                     {
+        //                         List<string> wordForms = new();
+                            
+        //                         foreach (var incorrectForm in word.IncorrectForms)
+        //                         {
+        //                             wordForms.Add(incorrectForm);
+        //                         }
+                                
+        //                         List<string> shuffledWordForms = wordForms.OrderBy(x => random.Next()).ToList();
+
+        //                         switch(difficulty)
+        //                         {
+        //                             case Difficulty.EASY:
+        //                                 wordWithForms.Add(
+        //                                     word.Word, 
+        //                                     new List<string> { 
+        //                                         shuffledWordForms[0],
+        //                                         shuffledWordForms[1],
+        //                                         shuffledWordForms[2]
+        //                                     }
+        //                                 );
+        //                                 break;
+
+        //                             case Difficulty.NORMAL:
+        //                                 wordWithForms.Add(
+        //                                     word.Word, 
+        //                                     new List<string> { 
+        //                                         shuffledWordForms[0],
+        //                                         shuffledWordForms[1],
+        //                                         shuffledWordForms[2]
+        //                                     }
+        //                                 );
+        //                                 break;
+
+        //                             case Difficulty.HARD:
+        //                                 wordWithForms.Add(
+        //                                     word.Word, 
+        //                                     new List<string> { 
+        //                                         shuffledWordForms[0],
+        //                                         shuffledWordForms[1],
+        //                                         shuffledWordForms[2]
+        //                                     }
+        //                                 );
+        //                                 break;
+
+        //                             default:
+        //                                 throw new Exception("Can not specify diffuculty to create words list.");
+        //                         }
+                                
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+
+        //     return wordWithForms;
+        // }
     }
 }

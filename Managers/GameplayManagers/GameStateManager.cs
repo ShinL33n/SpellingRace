@@ -12,16 +12,23 @@ namespace SpellingRace.Managers.GameplayManagers
                 Time = TimeSpan.Zero,
                 Level = 3,
                 GatesPassed = 0,
-                Life = 5, // DIFFICULTY LEVEL PROPERTY
+                Life = 0, // DIFFICULTY LEVEL PROPERTY
                 Score = 0,
-                SpeedMultiplier = 3f // DIFFICULTY LEVEL PROPERTY
+                SpeedMultiplier = 0 // DIFFICULTY LEVEL PROPERTY
             };
 
+        }
+
+        public void RegisterGameState()
+        {
             ServiceProvider.Register(_gameState);
         }
 
         public void Update(GameTime gameTime)
         {
+            // If it works it works, do not touch it \/
+            _gameState = ServiceProvider.Resolve<GameState>();
+
             _gameState.Time += gameTime.ElapsedGameTime;
 
             if(_gameState.GatesPassed >= 10) {
@@ -30,30 +37,30 @@ namespace SpellingRace.Managers.GameplayManagers
             }
         }
 
-        public float GetSpeedMultiplier()
-        {
-            return _gameState.SpeedMultiplier;
-        }
+        // public float GetSpeedMultiplier()
+        // {
+        //     return _gameState.SpeedMultiplier;
+        // }
 
-        public int GetLevel()
-        {
-            return _gameState.Level;
-        }
+        // public int GetLevel()
+        // {
+        //     return _gameState.Level;
+        // }
 
-        public int GetLife()
-        {
-            return _gameState.Life;
-        }
+        // public int GetLife()
+        // {
+        //     return _gameState.Life;
+        // }
 
-        public int GetScore()
-        {
-            return _gameState.Score;
-        }
+        // public int GetScore()
+        // {
+        //     return _gameState.Score;
+        // }
 
-        public TimeSpan GetTime()
-        {
-            return _gameState.Time;
-        }
+        // public TimeSpan GetTime()
+        // {
+        //     return _gameState.Time;
+        // }
 
     }
 }

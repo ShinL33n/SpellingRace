@@ -13,6 +13,7 @@ namespace SpellingRace.Core
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private GameStateManager _gameStateManager;
+        //private GameSettings _gameSettings;
 
 
         public Game1()
@@ -22,6 +23,7 @@ namespace SpellingRace.Core
             _graphics = new(this);
             SceneManager = new();
             _gameStateManager = new();
+            //_gameSettings = new();
         }
 
         protected override void Initialize()
@@ -33,6 +35,8 @@ namespace SpellingRace.Core
             ServiceProvider.Register(Content);
             ServiceProvider.Register(_spriteBatch);
             ServiceProvider.Register(_graphics);
+            _gameStateManager.RegisterGameState();
+           
 
             _graphics.PreferredBackBufferWidth = 1280;
             _graphics.PreferredBackBufferHeight = 1024;

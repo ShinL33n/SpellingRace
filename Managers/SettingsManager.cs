@@ -8,6 +8,7 @@ namespace SpellingRace.Managers
     {
         // private GameStateManager _gameStateManager;
         private GameState _gameState;
+        //private GameSettings _gameSettings;
 
         private readonly string _filePath;
         private string _jsonContent;
@@ -17,6 +18,7 @@ namespace SpellingRace.Managers
         {
             //_gameStateManager = ServiceProvider.Resolve<GameStateManager>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
+            //_gameSettings = ServiceProvider.Resolve<GameSettings>() ?? throw new NullReferenceException("GameSettings not registered in ServiceProvider.");
             _filePath = Path.Combine(AppContext.BaseDirectory, "Content", "Resources/settings.json");
             _jsonContent = File.ReadAllText(_filePath);
         }

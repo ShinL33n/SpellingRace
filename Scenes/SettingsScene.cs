@@ -10,6 +10,7 @@ namespace SpellingRace.Scenes
     {
         private Background _background;
         private GameState _gameState;
+        //private GameSettings _gameSettings;
         private SettingsManager _settingsManager;
         private Dictionary<string, Button> _buttons;
 
@@ -27,6 +28,7 @@ namespace SpellingRace.Scenes
             optionBorderTexture = _content.Load<Texture2D>("Textures/Gui/OptionBorder");
             _background = new(_content.Load<Texture2D>("Media/Backgrounds/OptionsBackground"));
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
+            //_gameSettings = ServiceProvider.Resolve<GameSettings>() ?? throw new NullReferenceException("GameSettings not registered in ServiceProvider.");
             _settingsManager = new();
 
 
@@ -50,16 +52,19 @@ namespace SpellingRace.Scenes
             {
                 _settingsManager.SaveSettings(0);
                 _gameState.Difficulty = Difficulty.EASY;
+                // _gameSettings.Difficulty = Difficulty.EASY;
             }
             if (_buttons["normalDifficultyButton"].Clicked())
             {
                 _settingsManager.SaveSettings(1);
                 _gameState.Difficulty = Difficulty.NORMAL;
+                // _gameSettings.Difficulty = Difficulty.NORMAL;
             }
             if (_buttons["hardDifficultyButton"].Clicked())
             {
                 _settingsManager.SaveSettings(2);
                 _gameState.Difficulty = Difficulty.HARD;
+                // _gameSettings.Difficulty = Difficulty.HARD;
             }
 
             difficultyText = _gameState.Difficulty switch

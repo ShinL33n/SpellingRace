@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,13 +13,13 @@ namespace SpellingRace.Scenes
         //private Difficulty _difficulty;
 
         private MovementManager _movementManager;
+        private GateChoiceManager _gateChoiceManager;
         private GatesManager _gatesManager;
-        private WordsManager _wordsManager;
+        //private WordsManager _wordsManager;
         private GameStateManager _gameStateManager;
         private GameInfoDisplayManager _gameInfoDisplayManager;
-        //private GameState _gameState;
+        private GameState _gameState;
         private SettingsManager _settingsManager;
-
 
         public GameScene(){}
 
@@ -35,14 +34,26 @@ namespace SpellingRace.Scenes
 
                 //_gameStateManager = new();
             //ServiceProvider.Register(_gameStateManager);
-            //_gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
+            _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
+            _gameState = new GameState {
+                Time = TimeSpan.Zero,
+                Level = 3, // DEFAULT 0
+                GatesPassed = 0,
+                Score = 0,
+            };
+            ServiceProvider.Register(_gameState);
 
             _settingsManager = new();
             _settingsManager.LoadSettings();
+
+            //_gameStateManager = new();
+            //_gameStateManager.RegisterGameState();
             
+
             _gatesManager = new();
-            _wordsManager = new();
+            //_wordsManager = new();
             _gameInfoDisplayManager = new();
+            _gateChoiceManager = new(_gatesManager);
 
             _background = new(_content.Load<Texture2D>("Media/Backgrounds/GameBackground"));
             _movementManager = new(_player.Position);
@@ -54,11 +65,21 @@ namespace SpellingRace.Scenes
             if(InputManager.WasKeyTriggered(Keys.Escape)) 
                 Game1.SceneManager.AddScene(new PauseScene());
 
+            Vector2 playerPosition = _movementManager.GetPlayerPosition();
 
-            _movementManager.Update(gameTime);
-            _player.Sprite.Update(_movementManager.GetPlayerPosition());
-            _gatesManager.Update();
+            // _gateChoiceManager.Update(
+            //     gameTime, 
+            //     playerPosition, 
+            //     _gatesManager.GetGatesYPosition(), 
+            //     _gatesManager.GetCorrectWordGateSegment(), 
+            //     _gatesManager.GetCorrectWord()
+            //     //_wordsManager.GetCorrectWord()
+            // );
             //_gameStateManager.Update(gameTime);
+            _gateChoiceManager.Update(gameTime, playerPosition);
+            _movementManager.Update(gameTime);
+            _player.Sprite.Update(playerPosition);
+            _gatesManager.Update();
             _gameInfoDisplayManager.Update(gameTime);
         }
 
@@ -68,6 +89,7 @@ namespace SpellingRace.Scenes
             _gatesManager.Draw();
             _player.Sprite.Draw();
             _gameInfoDisplayManager.Draw();
+            _gateChoiceManager.Draw();
         }
 
 
