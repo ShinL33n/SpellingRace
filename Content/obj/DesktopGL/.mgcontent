@@ -4,6 +4,26 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/CityBackgroundLeft.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/CityBackgroundRight.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/CloudsBackgroundLeft.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/CloudsBackgroundRight.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/ForestBackgroundLeft.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/ForestBackgroundRight.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/GameBackgroundEasy.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/GameBackgroundHard.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/GameBackgroundNormal.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MeadowBackgroundLeft.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MeadowBackgroundRight.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MenuBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MushroomsBackgroundLeft.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MushroomsBackgroundRight.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/OptionsBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/SeaBackgroundLeft.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/SeaBackgroundRight.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/UniversalBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/ForestBackground.png</File>
+    <File>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/GameBackground.png</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Fonts/InterFont.spritefont</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Fonts/OpenDyslexicFont.spritefont</File>
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Media/Backgrounds/GameBackground.png</File>
@@ -17,6 +37,13 @@
     <File>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Gui/OptionBorder.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -19,7 +19,7 @@ namespace SpellingRace.Gui.Elements
         private SpriteFont spriteFont;
         private bool v;
         private readonly SpriteBatch _spriteBatch;
-        private readonly GraphicsDevice _graphicsDevice;
+        //private readonly GraphicsDevice _graphicsDevice;
 
         /// <summary>
         /// Sprite without text
@@ -28,7 +28,7 @@ namespace SpellingRace.Gui.Elements
         {
             // DI
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
-            _graphicsDevice = ServiceProvider.Resolve<GraphicsDevice>();
+            //_graphicsDevice = ServiceProvider.Resolve<GraphicsDevice>();
 
             // Dimensions
             _position = alignToCenterPoint ? position - size / 2 : position;

@@ -20,7 +20,23 @@
 			{
 				"form": 3,
 				"words": [
-					{"word": "żółty", "incorrect_forms": ["żułty", "rzułty"]}
+					{"word": "żółty", "incorrect_forms": ["żułty", "rzułty"]},
+					{"word": "żyrandol ", "incorrect_forms": ["rzyrandol", "żylandor"]},
+					{"word": "ubóstwo ", "incorrect_forms": ["ubustwo","ubóstfo"]}
+				]
+			},
+			{
+				"form": 4,
+				"words": [
+					{"word": "krzyż", "incorrect_forms": ["kżyż", "krzysz", "kszyż"]},
+					{"word": "żuk", "incorrect_forms": ["rzuk","żók", "rzók"]},
+					{"word": "humor", "incorrect_forms": ["chumor","hómor", "chómor"]},
+					{"word": "hałas", "incorrect_forms": ["chałas","chauas", "hauas"]},
+					{"word": "ruch", "incorrect_forms": ["ruh","róch", "róh"]},
+					{"word": "rząd", "incorrect_forms": ["żąd","rzond", "żond"]},
+					{"word": "przepaść ", "incorrect_forms": ["pżepaść", "przepaźć", "pżepaźć"]},
+					{"word": "życie  ", "incorrect_forms": ["rzycie", "życię", "rzycię"]},
+					{"word": "rzut", "incorrect_forms": ["rzót","żut", "żót"]}
 				]
 			}
 		]
@@ -43,7 +59,8 @@
 			{
 				"form": 3,
 				"words": [
-					{"word": "wieża", "incorrect_forms": ["wierza", "wiesza"]}	
+					{"word": "wieża", "incorrect_forms": ["wierza", "wiesza"]},
+					{"word": "chodzić  ", "incorrect_forms": ["hodzić", "chodzidź"]}
 				]
 			},
 			{
@@ -56,6 +73,7 @@
 			{
 				"form": 6,
 				"words": [
+					{"word": "chęć ", "incorrect_forms": ["hęć", "chenć", "henć", "chędź", "chendź"]},
 					{"word": "rzucać", "incorrect_forms": ["żucać", "rzócać", "żócać", "rzucadź", "żucadź"]}
 				]
 			}

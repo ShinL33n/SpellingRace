@@ -60,7 +60,7 @@ namespace SpellingRace.Managers.GameplayManagers
             _level = _gameState.Level;
             _timer = _gameState.Time;
 
-            _ingameMenu.Update();
+            //_ingameMenu.Update();
         }
 
         public void Draw()

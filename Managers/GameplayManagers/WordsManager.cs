@@ -11,7 +11,7 @@ namespace SpellingRace.Managers.GameplayManagers
         private readonly string _jsonContent;
         private readonly WordsList _wordsList;
 
-        private string _correctWord;
+        private string _correctWord, _lastWord;
 
         public WordsManager()
         {
@@ -19,6 +19,7 @@ namespace SpellingRace.Managers.GameplayManagers
             _jsonContent = File.ReadAllText(_filePath);
             _wordsList = JsonSerializer.Deserialize<WordsList>(_jsonContent);
             _correctWord = string.Empty;
+            _lastWord = string.Empty;
         }
 
         public List<string> GetWords(Difficulty difficulty, int level)
@@ -29,7 +30,7 @@ namespace SpellingRace.Managers.GameplayManagers
 
             foreach (var difficultyLevel in _wordsList.DifficultyLevels)
             {
-                if(difficultyLevel.Level == level) // TO CHANGE
+                if(difficultyLevel.Level <= level) // TO CHANGE
                 {
                     foreach (var form in difficultyLevel.Forms)
                     {
@@ -87,16 +88,25 @@ namespace SpellingRace.Managers.GameplayManagers
                 }
             }
             
-
+            
             Dictionary<string, List<string>> shuffledWordWithForms = wordWithForms.OrderBy(x => random.Next()).ToDictionary(x => x.Key, x => x.Value);
 
             _correctWord = shuffledWordWithForms.ElementAt(0).Key.ToString();
 
+            while(_lastWord == _correctWord)
+            {
+                shuffledWordWithForms = wordWithForms.OrderBy(x => random.Next()).ToDictionary(x => x.Key, x => x.Value);
+                _correctWord = shuffledWordWithForms.ElementAt(0).Key.ToString();
+            }
+
             words.Add(_correctWord);
             words.Add(shuffledWordWithForms.ElementAt(0).Value[0].ToString());
-            words.Add(shuffledWordWithForms.ElementAt(0).Value[1].ToString());
+            if(difficulty == Difficulty.NORMAL || difficulty == Difficulty.HARD)  words.Add(shuffledWordWithForms.ElementAt(0).Value[1].ToString());
+            if(difficulty == Difficulty.HARD)  words.Add(shuffledWordWithForms.ElementAt(0).Value[2].ToString());
 
             words = words.OrderBy(x => random.Next()).ToList();
+
+            _lastWord = _correctWord;
 
             return words;
         }

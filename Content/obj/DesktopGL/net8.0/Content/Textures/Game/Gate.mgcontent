@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Textures/Game/Gate.png</SourceFile>
-  <SourceTime>2024-12-28T18:55:34.3009284+01:00</SourceTime>
-  <DestFile>C:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Content/Textures/Game/Gate.xnb</DestFile>
-  <DestTime>2024-12-28T19:41:13.0434798+01:00</DestTime>
+  <SourceFile>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Textures/Game/Gate.png</SourceFile>
+  <SourceTime>2025-01-05T11:22:46.5362046+01:00</SourceTime>
+  <DestFile>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/bin/DesktopGL/Content/Textures/Game/Gate.xnb</DestFile>
+  <DestTime>2025-01-05T11:59:01.7290377+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

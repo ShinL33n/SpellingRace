@@ -7,6 +7,8 @@ namespace SpellingRace.Scenes
     // JPWP: Scena odpowiadająca za wyświetlenie ekranu rozgrywki
     public class GameScene : Scene
     {
+        //private Sprite _environmentBackground;
+        private EnvironmentBackgroundManager _environmentBackgroundManager;
         private Background _background;
         private Player _player;
 
@@ -37,7 +39,7 @@ namespace SpellingRace.Scenes
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
             _gameState = new GameState {
                 Time = TimeSpan.Zero,
-                Level = 3, // DEFAULT 0
+                Level = 0, 
                 GatesPassed = 0,
                 Score = 0,
             };
@@ -55,7 +57,24 @@ namespace SpellingRace.Scenes
             _gameInfoDisplayManager = new();
             _gateChoiceManager = new(_gatesManager);
 
-            _background = new(_content.Load<Texture2D>("Media/Backgrounds/GameBackground"));
+            //_environmentBackground = new(_content.Load<Texture2D>("Media/Backgrounds/ForestBackgroundRight"));
+            // _environmentBackground = new Sprite(
+            //     new Vector2(-218, -143), 
+            //     new Vector2(879, 1167), 
+            //     _content.Load<Texture2D>("Media/Backgrounds/ForestBackground"),
+            //     false
+            // );
+            //_environmentBackgroundLeft = new(new Vector2(-218, -143), new Vector2(858, 1167), _content.Load<Texture2D>("Media/Backgrounds/ForestBackgroundLeft"));
+            // _environmentBackgroundRight = new(new Vector2(windowSize.X / 2, -143), new Vector2(858, 1167), _content.Load<Texture2D>("Media/Backgrounds/ForestBackgroundRight"));
+            _environmentBackgroundManager = new();
+
+            _background = _gameState.Difficulty switch {
+                Difficulty.EASY => new(_content.Load<Texture2D>("Media/Backgrounds/GameBackgroundEasy")),
+                Difficulty.NORMAL => new(_content.Load<Texture2D>("Media/Backgrounds/GameBackgroundNormal")),
+                Difficulty.HARD => new(_content.Load<Texture2D>("Media/Backgrounds/GameBackgroundHard")),
+                _ => new(_content.Load<Texture2D>("Media/Backgrounds/GameBackgroundNormal")),
+            };
+            
             _movementManager = new(_player.Position);
         }
 
@@ -67,15 +86,10 @@ namespace SpellingRace.Scenes
 
             Vector2 playerPosition = _movementManager.GetPlayerPosition();
 
-            // _gateChoiceManager.Update(
-            //     gameTime, 
-            //     playerPosition, 
-            //     _gatesManager.GetGatesYPosition(), 
-            //     _gatesManager.GetCorrectWordGateSegment(), 
-            //     _gatesManager.GetCorrectWord()
-            //     //_wordsManager.GetCorrectWord()
-            // );
-            //_gameStateManager.Update(gameTime);
+
+            //_environmentBackground.Update();
+            //_environmentBackgroundManager.Update();
+            _environmentBackgroundManager.Update();
             _gateChoiceManager.Update(gameTime, playerPosition);
             _movementManager.Update(gameTime);
             _player.Sprite.Update(playerPosition);
@@ -85,6 +99,10 @@ namespace SpellingRace.Scenes
 
         public override void Draw()
         {
+            _environmentBackgroundManager.Draw();
+            // _environmentBackgroundLeft.Draw();
+            // _environmentBackgroundRight.Draw();
+            //_environmentBackgroundManager.Draw();
             _background.Draw();
             _gatesManager.Draw();
             _player.Sprite.Draw();

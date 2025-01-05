@@ -21,7 +21,7 @@ namespace SpellingRace.Scenes
         {
             sceneTitle = "WYŚCIG Z ORTOGRAFIĄ";
 
-            menuOptionBorderTexture = _content.Load<Texture2D>("Textures/Gui/menuOptionBorder");
+            menuOptionBorderTexture = _content.Load<Texture2D>("Textures/Gui/MenuOptionBorder");
             menuBackgroundTexture = _content.Load<Texture2D>("Media/Backgrounds/MenuBackground");
             exitTexture = _content.Load<Texture2D>("Textures/Gui/Exit");
 

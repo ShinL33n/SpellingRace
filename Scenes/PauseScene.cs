@@ -22,7 +22,7 @@ namespace SpellingRace.Scenes
             openDyslexicFont = _content.Load<SpriteFont>("Fonts/OpenDyslexicFont");
 
             menuOptionBorder = _content.Load<Texture2D>("Textures/Gui/MenuOptionBorder");
-            menuBackground = _content.Load<Texture2D>("Media/Backgrounds/MenuBackground");
+            menuBackground = _content.Load<Texture2D>("Media/Backgrounds/UniversalBackground");
 
             _background = new(menuBackground);
 

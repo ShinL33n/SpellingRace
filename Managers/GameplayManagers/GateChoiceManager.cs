@@ -47,10 +47,11 @@ namespace SpellingRace.Managers.GameplayManagers
             string correctWord = _gatesManager.GetCorrectWord();
             int correctWordSegment = _gatesManager.GetCorrectWordGateSegment();
 
-            if (_gatesManager.GetGatesYPosition() >= playerPosition.Y && lastWord != correctWord)
+            if (_gatesManager.GetGatesYPosition() >= playerPosition.Y && lastWord != correctWord) // BUG: if new drawed word is the same as the previous one then nothing happens (with the score/life)
             {
                 if(GetPlayerSegmentPosition(playerPosition.X) == correctWordSegment)
                 {
+                    _gameState.GatesPassed++;
                     _gameState.Score++;
                     lastWord = correctWord;
                     goodChoice = true;
@@ -58,6 +59,7 @@ namespace SpellingRace.Managers.GameplayManagers
                 }
                 else
                 {
+                    _gameState.GatesPassed++;
                     _gameState.Life--;
                     lastWord = correctWord;
                     goodChoice = false;

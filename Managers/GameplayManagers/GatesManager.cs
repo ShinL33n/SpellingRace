@@ -42,19 +42,18 @@ namespace SpellingRace.Managers.GameplayManagers
 
             switch (difficulty){
                 case Difficulty.EASY:
-                    // TO CHANGE
-                    gateMaxSize = new(391f, 294f); 
-                    perspectiveModifier = 2.43f;
+                    gateMaxSize = new(600, 451); 
+                    perspectiveModifier = 2.35f;
                     gateMinSize = gateMaxSize / perspectiveModifier;
                     _positions = [
-                        new Vector2(0, 0),
-                        new Vector2(0, 1)
+                        new Vector2(windowSize.X / 2 - 135 - gateMinSize.X / 2, -1 * gateMinSize.Y),
+                        new Vector2(windowSize.X / 2 + 135 - gateMinSize.X / 2, -1 * gateMinSize.Y)
                     ];
                     break;
 
 
                 case Difficulty.NORMAL:
-                    gateMaxSize = new(391f, 294f);
+                    gateMaxSize = new(391, 294);
                     perspectiveModifier = 2.43f;
                     gateMinSize = gateMaxSize / perspectiveModifier;
                     _positions = [
@@ -66,15 +65,14 @@ namespace SpellingRace.Managers.GameplayManagers
 
 
                 case Difficulty.HARD:
-                    // TO CHANGE
-                    gateMaxSize = new(391f, 294f); 
-                    perspectiveModifier = 2.43f;
+                    gateMaxSize = new(300, 225); 
+                    perspectiveModifier = 2.4f;
                     gateMinSize = gateMaxSize / perspectiveModifier;
                     _positions = [
-                        new Vector2(0, 0),
-                        new Vector2(0, 0),
-                        new Vector2(0, 0), 
-                        new Vector2(0, 1)
+                        new Vector2(windowSize.X / 2 - 202.5f - gateMinSize.X / 2, -1 * gateMinSize.Y),
+                        new Vector2(windowSize.X / 2 - 67.5f - gateMinSize.X / 2, -1 * gateMinSize.Y),
+                        new Vector2(windowSize.X / 2 + 67.5f - gateMinSize.X / 2, -1 * gateMinSize.Y),
+                        new Vector2(windowSize.X / 2 + 202.5f - gateMinSize.X / 2, -1 * gateMinSize.Y) 
                     ];
                     break;
                 default:
@@ -232,10 +230,28 @@ namespace SpellingRace.Managers.GameplayManagers
 
         private void EasyDifficultyGatesMovement()
         {
+            float SpeedMultiplier = _gameState.SpeedMultiplier;
+
             // Left gate movement
+            _gates["left"].Position = new(
+                windowSize.X / 2 - 135 - _gates["left"].Size.X / 2 - (float)Math.Tan(10.39*Math.PI/180) * (_gates["left"].Position.Y + _gates["left"].Size.Y), 
+                _gates["left"].Position.Y + (1 * SpeedMultiplier)
+            );
 
             // Right gate movement
+            _gates["right"].Position = new(
+                windowSize.X / 2 + 135 - _gates["right"].Size.X / 2 + (float)Math.Tan(10.39*Math.PI/180) * (_gates["right"].Position.Y + _gates["right"].Size.Y), 
+                _gates["right"].Position.Y + (1 * SpeedMultiplier)
+            );
 
+            foreach(var gate in _gates.Values) {
+                gate.Size = (gate.Size.X <= gateMaxSize.X && gate.Size.Y <= gateMaxSize.Y) 
+                ? new(gate.Size.X + SpeedMultiplier * (gateMaxSize.X - gateMinSize.X) / windowSize.X, 
+                gate.Size.Y + SpeedMultiplier * (gateMaxSize.Y - gateMinSize.Y) / (windowSize.Y + gateMinSize.Y)) 
+                : gateMaxSize;
+
+                gate.Sprite.Update(gate.Position, gate.Size);
+            }
         }
 
         private void NormalDifficultyGatesMovement() 
@@ -269,13 +285,40 @@ namespace SpellingRace.Managers.GameplayManagers
 
         private void HardDifficultyGatesMovement()
         {
+            float SpeedMultiplier = _gameState.SpeedMultiplier;
+
             // Left gate movement
+            _gates["left"].Position = new(
+                windowSize.X / 2 - 202.5f - _gates["left"].Size.X / 2 - (float)Math.Tan(15.28*Math.PI/180) * (_gates["left"].Position.Y + _gates["left"].Size.Y), 
+                _gates["left"].Position.Y + (1 * SpeedMultiplier)
+            );
 
             // MiddleLeft gate movement
+            _gates["middleLeft"].Position = new(
+                windowSize.X / 2 - 67.5f - _gates["middleLeft"].Size.X / 2 - (float)Math.Tan(5.24*Math.PI/180) * (_gates["middleLeft"].Position.Y + _gates["middleLeft"].Size.Y), 
+                _gates["middleLeft"].Position.Y + (1 * SpeedMultiplier)
+            );
 
             // MiddleRight gate movement
+            _gates["middleRight"].Position = new(
+                windowSize.X / 2 + 67.5f - _gates["middleRight"].Size.X / 2 + (float)Math.Tan(5.24*Math.PI/180) * (_gates["middleRight"].Position.Y + _gates["middleRight"].Size.Y), 
+                _gates["middleRight"].Position.Y + (1 * SpeedMultiplier)
+            );
 
             // Right gate movement
+            _gates["right"].Position = new(
+                windowSize.X / 2 + 202.5f - _gates["right"].Size.X / 2 + (float)Math.Tan(15.28*Math.PI/180) * (_gates["right"].Position.Y + _gates["right"].Size.Y), 
+                _gates["right"].Position.Y + (1 * SpeedMultiplier)
+            );
+
+            foreach(var gate in _gates.Values) {
+                gate.Size = (gate.Size.X <= gateMaxSize.X && gate.Size.Y <= gateMaxSize.Y) 
+                ? new(gate.Size.X + SpeedMultiplier * (gateMaxSize.X - gateMinSize.X) / windowSize.X, 
+                gate.Size.Y + SpeedMultiplier * (gateMaxSize.Y - gateMinSize.Y) / (windowSize.Y + gateMinSize.Y)) 
+                : gateMaxSize;
+
+                gate.Sprite.Update(gate.Position, gate.Size);
+            }
 
         }
     }

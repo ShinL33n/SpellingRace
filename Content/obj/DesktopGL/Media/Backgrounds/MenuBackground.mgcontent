@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/Media/Backgrounds/MenuBackground.png</SourceFile>
-  <SourceTime>2024-12-27T23:01:55.7625816+01:00</SourceTime>
-  <DestFile>c:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/Content/bin/DesktopGL/Media/Backgrounds/MenuBackground.xnb</DestFile>
-  <DestTime>2024-12-29T16:15:57.0097747+01:00</DestTime>
+  <SourceFile>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/Media/Backgrounds/MenuBackground.png</SourceFile>
+  <SourceTime>2024-12-03T17:51:58.8998402+01:00</SourceTime>
+  <DestFile>/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/Content/bin/DesktopGL/Media/Backgrounds/MenuBackground.xnb</DestFile>
+  <DestTime>2025-01-05T17:29:47.5479802+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
