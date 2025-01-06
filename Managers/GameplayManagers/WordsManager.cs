@@ -7,11 +7,11 @@ namespace SpellingRace.Managers.GameplayManagers
 {
     public class WordsManager
     {  
+        private readonly WordsList _wordsList;
         private readonly string _filePath;
         private readonly string _jsonContent;
-        private readonly WordsList _wordsList;
-
         private string _correctWord, _lastWord;
+
 
         public WordsManager()
         {
@@ -92,9 +92,7 @@ namespace SpellingRace.Managers.GameplayManagers
                 }
             }
             
-            
             Dictionary<string, List<string>> shuffledWordWithForms = wordWithForms.OrderBy(x => random.Next()).ToDictionary(x => x.Key, x => x.Value);
-
             _correctWord = shuffledWordWithForms.ElementAt(0).Key.ToString();
 
             // Potential bug:
@@ -124,77 +122,5 @@ namespace SpellingRace.Managers.GameplayManagers
         {
             return _correctWord;
         }
-
-
-        // private Dictionary<string, List<string>> WordsHelper(WordsList _wordsList, Difficulty difficulty, int level)
-        // {
-        //     Dictionary<string, List<string>> wordWithForms = new();
-
-        //     foreach (var difficultyLevel in _wordsList.DifficultyLevels)
-        //     {
-        //         if(difficultyLevel.Level == level) // TO CHANGE
-        //         {
-        //             foreach (var form in difficultyLevel.Forms)
-        //             {
-        //                 if(form.FormNumber >= (int)difficulty + 2)
-        //                 {
-        //                     foreach (var word in form.Words)
-        //                     {
-        //                         List<string> wordForms = new();
-                            
-        //                         foreach (var incorrectForm in word.IncorrectForms)
-        //                         {
-        //                             wordForms.Add(incorrectForm);
-        //                         }
-                                
-        //                         List<string> shuffledWordForms = wordForms.OrderBy(x => random.Next()).ToList();
-
-        //                         switch(difficulty)
-        //                         {
-        //                             case Difficulty.EASY:
-        //                                 wordWithForms.Add(
-        //                                     word.Word, 
-        //                                     new List<string> { 
-        //                                         shuffledWordForms[0],
-        //                                         shuffledWordForms[1],
-        //                                         shuffledWordForms[2]
-        //                                     }
-        //                                 );
-        //                                 break;
-
-        //                             case Difficulty.NORMAL:
-        //                                 wordWithForms.Add(
-        //                                     word.Word, 
-        //                                     new List<string> { 
-        //                                         shuffledWordForms[0],
-        //                                         shuffledWordForms[1],
-        //                                         shuffledWordForms[2]
-        //                                     }
-        //                                 );
-        //                                 break;
-
-        //                             case Difficulty.HARD:
-        //                                 wordWithForms.Add(
-        //                                     word.Word, 
-        //                                     new List<string> { 
-        //                                         shuffledWordForms[0],
-        //                                         shuffledWordForms[1],
-        //                                         shuffledWordForms[2]
-        //                                     }
-        //                                 );
-        //                                 break;
-
-        //                             default:
-        //                                 throw new Exception("Can not specify diffuculty to create words list.");
-        //                         }
-                                
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-
-        //     return wordWithForms;
-        // }
     }
 }

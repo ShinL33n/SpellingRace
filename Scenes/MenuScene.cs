@@ -7,12 +7,11 @@ namespace SpellingRace.Scenes
 {
     // JPWP: Scena odpowiadająca za wyświetlenie menu głównego
     public class MenuScene : Scene
-    {
-    
-        Texture2D menuOptionBorderTexture, menuBackgroundTexture, exitTexture;
-        
+    {        
         private Dictionary<string, Button> _buttons;
         private Background _background;
+
+        Texture2D menuOptionBorderTexture, menuBackgroundTexture, exitTexture;
 
 
         public MenuScene(){}

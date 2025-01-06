@@ -7,21 +7,17 @@ namespace SpellingRace.Scenes
     // JPWP: Scena odpowiadająca za wyświetlenie ekranu rozgrywki
     public class GameScene : Scene
     {
-        //private Sprite _environmentBackground;
         private EnvironmentBackgroundManager _environmentBackgroundManager;
         private Background _background;
         private Player _player;
 
-        //private Difficulty _difficulty;
-
         private MovementManager _movementManager;
         private GateChoiceManager _gateChoiceManager;
         private GatesManager _gatesManager;
-        //private WordsManager _wordsManager;
         private GameStateManager _gameStateManager;
         private GameInfoDisplayManager _gameInfoDisplayManager;
-        private GameState _gameState;
         private SettingsManager _settingsManager;
+        private GameState _gameState;
 
         public GameScene(){}
 
@@ -31,46 +27,16 @@ namespace SpellingRace.Scenes
 
             _gameStateManager = new();
             _gameStateManager.RegisterGameState();
-
-            //_difficulty = Difficulty.NORMAL; // FROM SETTINGS
-
-            // _gameSettingsManager = new();
-            // ServiceProvider.Register(_gameSettingsLoader);
-
-                //_gameStateManager = new();
-            //ServiceProvider.Register(_gameStateManager);
             _settingsManager = ServiceProvider.Resolve<SettingsManager>() ?? throw new NullReferenceException("SettingsManager not registered in ServiceProvider.");
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
-            // _gameState = new GameState {
-            //     Time = TimeSpan.Zero,
-            //     Level = 0, 
-            //     GatesPassed = 0,
-            //     Score = 0,
-            // };
-            // ServiceProvider.Register(_gameState);
 
-            //_settingsManager = new();
             _settingsManager.LoadSettings();
             _settingsManager.LoadGameStateParameters();
 
-            //_gameStateManager = new();
-            //_gameStateManager.RegisterGameState();
-            
-
             _gatesManager = new();
-            //_wordsManager = new();
             _gameInfoDisplayManager = new();
             _gateChoiceManager = new(_gatesManager);
 
-            //_environmentBackground = new(_content.Load<Texture2D>("Media/Backgrounds/ForestBackgroundRight"));
-            // _environmentBackground = new Sprite(
-            //     new Vector2(-218, -143), 
-            //     new Vector2(879, 1167), 
-            //     _content.Load<Texture2D>("Media/Backgrounds/ForestBackground"),
-            //     false
-            // );
-            //_environmentBackgroundLeft = new(new Vector2(-218, -143), new Vector2(858, 1167), _content.Load<Texture2D>("Media/Backgrounds/ForestBackgroundLeft"));
-            // _environmentBackgroundRight = new(new Vector2(windowSize.X / 2, -143), new Vector2(858, 1167), _content.Load<Texture2D>("Media/Backgrounds/ForestBackgroundRight"));
             _environmentBackgroundManager = new();
 
             _background = _gameState.Difficulty switch {
@@ -89,16 +55,12 @@ namespace SpellingRace.Scenes
             if(InputManager.WasKeyTriggered(Keys.Escape)) 
                 Game1.SceneManager.AddScene(new PauseScene());
 
-                
+
             _movementManager.Update(gameTime);
             Vector2 playerPosition = _movementManager.GetPlayerPosition();
 
-
-            //_environmentBackground.Update();
-            //_environmentBackgroundManager.Update();
             _gameStateManager.Update(gameTime);
             _environmentBackgroundManager.Update();
-            
             _gateChoiceManager.Update(gameTime, playerPosition);
             _player.Sprite.Update(playerPosition);
             _gatesManager.Update();
@@ -108,14 +70,11 @@ namespace SpellingRace.Scenes
         public override void Draw()
         {
             _environmentBackgroundManager.Draw();
-            // _environmentBackgroundLeft.Draw();
-            // _environmentBackgroundRight.Draw();
-            //_environmentBackgroundManager.Draw();
             _background.Draw();
             _gatesManager.Draw();
             _player.Sprite.Draw();
             _gameInfoDisplayManager.Draw();
-            _gateChoiceManager.Draw();
+            //_gateChoiceManager.Draw();
         }
 
 

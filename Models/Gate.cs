@@ -7,9 +7,6 @@ namespace SpellingRace.Models
 {
     public class Gate : Object
     {    
-        // public float PerspectiveModifier { get; set; }
         public string Word { get; set; }
-        //public List<string> IncorrectForms { get; set; }
-        // public int GatesQuantity { get; set; }
     }
 }

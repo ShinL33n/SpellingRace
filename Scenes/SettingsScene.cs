@@ -9,17 +9,16 @@ namespace SpellingRace.Scenes
     public class SettingsScene : Scene
     {
         private Background _background;
-        //private GameState _gameState;
-        //private SettingsManager _settingsManager;
+
         private SettingsManager _settingsManager;
+
         private Dictionary<string, Button> _buttons;
 
-        Texture2D optionBorderTexture;
         string easyDifficultyText, normalDifficultyText,  hardDifficultyText, difficultyText;
+        Texture2D optionBorderTexture;
         
-        public SettingsScene()
-        {
-        }
+
+        public SettingsScene(){}
 
         public override void LoadContent()
         {
@@ -27,18 +26,14 @@ namespace SpellingRace.Scenes
 
             optionBorderTexture = _content.Load<Texture2D>("Textures/Gui/OptionBorder");
             _background = new(_content.Load<Texture2D>("Media/Backgrounds/OptionsBackground"));
-            //_gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
             _settingsManager = ServiceProvider.Resolve<SettingsManager>() ?? throw new NullReferenceException("GameSettings not registered in ServiceProvider.");
-            //_settingsManager = new();
+        
             _settingsManager.LoadSettings();
-
 
             easyDifficultyText = "Łatwy";
             normalDifficultyText = "Średni";
             hardDifficultyText = "Trudny";
         
-            
-
             AddButtons();
         }
 
@@ -53,19 +48,16 @@ namespace SpellingRace.Scenes
             {
                 _settingsManager.SaveSettings(0);
                 _settingsManager.Difficulty = Difficulty.EASY;
-                //_gameState.Difficulty = Difficulty.EASY;
             }
             if (_buttons["normalDifficultyButton"].Clicked())
             {
                 _settingsManager.SaveSettings(1);
                 _settingsManager.Difficulty = Difficulty.NORMAL;
-                //_gameState.Difficulty = Difficulty.NORMAL;
             }
             if (_buttons["hardDifficultyButton"].Clicked())
             {
                 _settingsManager.SaveSettings(2);
                 _settingsManager.Difficulty = Difficulty.HARD;
-                //_gameState.Difficulty = Difficulty.HARD;
             }
 
             difficultyText = _settingsManager.Difficulty switch

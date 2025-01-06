@@ -26,42 +26,14 @@ namespace SpellingRace.Managers.GameplayManagers
 
         public void Update(GameTime gameTime)
         {
-            // If it works it works, do not touch it \/
-            //_gameState = ServiceProvider.Resolve<GameState>();
 
             _gameState.Time += gameTime.ElapsedGameTime;
 
             if(_gameState.GatesPassed >= 10) {
                 _gameState.Level++;
-                _gameState.SpeedMultiplier *= 1.4f; // DIFFICULTY LEVEL PROPERTY
+                _gameState.SpeedMultiplier *= 1.4f;
                 _gameState.GatesPassed = 0;
             }
         }
-
-        // public float GetSpeedMultiplier()
-        // {
-        //     return _gameState.SpeedMultiplier;
-        // }
-
-        // public int GetLevel()
-        // {
-        //     return _gameState.Level;
-        // }
-
-        // public int GetLife()
-        // {
-        //     return _gameState.Life;
-        // }
-
-        // public int GetScore()
-        // {
-        //     return _gameState.Score;
-        // }
-
-        // public TimeSpan GetTime()
-        // {
-        //     return _gameState.Time;
-        // }
-
     }
 }

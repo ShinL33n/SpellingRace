@@ -12,32 +12,28 @@ namespace SpellingRace.Managers.GameplayManagers
     {
         private GraphicsDeviceManager _graphics;
         private ContentManager _content;
-        //private GameStateManager _gameStateManager;
-        private GameState _gameState;
+
         private WordsManager _wordsManager;
+        private GameState _gameState;
 
-        Difficulty difficulty;
-
-        Vector2 windowSize, gateMaxSize, gateMinSize;
-        float perspectiveModifier;
-
-        
         private Vector2[] _positions;
         private Dictionary<string, Gate> _gates;
         private List<string> _wordsList;
+
+        float perspectiveModifier;
+        Vector2 windowSize, gateMaxSize, gateMinSize;
+        Difficulty difficulty;
 
         
         public GatesManager()
         {
             _graphics = ServiceProvider.Resolve<GraphicsDeviceManager>() ?? throw new NullReferenceException("GraphicsDeviceManager not registered in ServiceProvider.");
             _content = ServiceProvider.Resolve<ContentManager>() ?? throw new NullReferenceException("ContentManager not registered in ServiceProvider.");
-            //_gameStateManager = ServiceProvider.Resolve<GameStateManager>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
             _wordsManager = new();
             
             windowSize = new(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
 
-            //difficulty = Difficulty.NORMAL; // DIFFICULTY LEVEL 
             difficulty = _gameState.Difficulty;
 
             switch (difficulty){
@@ -79,8 +75,6 @@ namespace SpellingRace.Managers.GameplayManagers
                     throw new Exception("No difficulty level has been set.");
             }
 
-
-            // _wordsList = _wordsManager.GetWords(difficulty, _gameStateManager.GetLevel());
             _wordsList = _wordsManager.GetWords(difficulty, _gameState.Level);
             _gates = CreateGates(_wordsList);
 
@@ -89,10 +83,6 @@ namespace SpellingRace.Managers.GameplayManagers
         public Dictionary<string, Gate> CreateGates(List<string> words)
         {
             Dictionary<string, Gate> gates = new();
-
-            // Random random = new();
-            // List<string> shuffledWords = words.OrderBy(x => random.Next()).ToList();
-            //List<string> shuffledWords = words;
             
             switch (difficulty){
                 case Difficulty.EASY:
@@ -190,7 +180,6 @@ namespace SpellingRace.Managers.GameplayManagers
             }
 
             if(_gates["left"].Position.Y >= windowSize.Y) {
-                // _wordsList = _wordsManager.GetWords(difficulty, _gameStateManager.GetLevel());
                 _wordsList = _wordsManager.GetWords(difficulty, _gameState.Level);
                 _gates = CreateGates(_wordsList);
             }

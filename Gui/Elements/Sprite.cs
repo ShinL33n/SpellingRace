@@ -17,9 +17,7 @@ namespace SpellingRace.Gui.Elements
         private Vector2 vector22;
         private Texture2D texture2D;
         private SpriteFont spriteFont;
-        private bool v;
         private readonly SpriteBatch _spriteBatch;
-        //private readonly GraphicsDevice _graphicsDevice;
 
         /// <summary>
         /// Sprite without text
@@ -28,12 +26,12 @@ namespace SpellingRace.Gui.Elements
         {
             // DI
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
-            //_graphicsDevice = ServiceProvider.Resolve<GraphicsDevice>();
 
             // Dimensions
             _position = alignToCenterPoint ? position - size / 2 : position;
             _size = size;
 
+            // Texture
             _texture = texture;
 
             _spriteBoundaries = new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); 
@@ -46,7 +44,6 @@ namespace SpellingRace.Gui.Elements
         /// </summary>
         public Sprite(Vector2 position, Vector2 size, Texture2D texture, SpriteFont font, Color textColor, string text, bool alignToCenterPoint = false)
         {
-
             // DI
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
 
@@ -68,14 +65,6 @@ namespace SpellingRace.Gui.Elements
             _alignToCenterPoint = alignToCenterPoint;
         }
 
-        public Sprite(Vector2 vector21, Vector2 vector22, Texture2D texture2D, SpriteFont spriteFont, bool v)
-        {
-            this.vector21 = vector21;
-            this.vector22 = vector22;
-            this.texture2D = texture2D;
-            this.spriteFont = spriteFont;
-            this.v = v;
-        }
 
         public void Update(Vector2? position = null, Vector2? size = null)
         {

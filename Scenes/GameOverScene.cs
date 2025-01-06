@@ -7,10 +7,12 @@ namespace SpellingRace.Scenes
     public class GameOverScene : Scene
     {
         private GameState _gameState;
+
         private Dictionary<string, Button> _buttons;
 
         Texture2D menuOptionBorderTexture;
         string endTime;
+
 
         public override void LoadContent()
         {

@@ -7,11 +7,10 @@ namespace SpellingRace.Scenes
     // JPWP: Scena odpowiadająca za wyświetlenie menu pauzy w grze
     public class PauseScene : Scene 
     {
-        Texture2D menuOptionBorder, menuBackground;
-        //SpriteFont interFont, openDyslexicFont;
-        
         private Dictionary<string, Button> _buttons;
         private Background _background;
+
+        Texture2D menuOptionBorder, menuBackground;
 
 
         public PauseScene(){}

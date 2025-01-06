@@ -7,13 +7,14 @@ namespace SpellingRace.Managers.GameplayManagers
 {
     public class GameInfoDisplayManager
     {
+        private Sprite _ingameMenu;
+
+        private SpriteBatch _spriteBatch;
+
         private GraphicsDeviceManager _graphics;
         private ContentManager _content;
-        //private GameStateManager _gameStateManager;
         private GameState _gameState;
 
-        private Sprite _ingameMenu;
-        private SpriteBatch _spriteBatch;
         private TimeSpan _timer;
         private int _life, _score, _level;
 
@@ -25,7 +26,6 @@ namespace SpellingRace.Managers.GameplayManagers
         {
             _graphics = ServiceProvider.Resolve<GraphicsDeviceManager>() ?? throw new NullReferenceException("GraphicsDeviceManager not registered in ServiceProvider.");
             _content = ServiceProvider.Resolve<ContentManager>() ?? throw new NullReferenceException("ContentManager not registered in ServiceProvider.");
-            //_gameStateManager = ServiceProvider.Resolve<GameStateManager>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
             _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
 
@@ -39,10 +39,6 @@ namespace SpellingRace.Managers.GameplayManagers
                 false
             );
 
-            // _life = _gameStateManager.GetLife();
-            // _score = _gameStateManager.GetScore();
-            // _level = _gameStateManager.GetLevel(); 
-            // _timer = _gameStateManager.GetTime();
             _life = _gameState.Life;
             _score = _gameState.Score;
             _level = _gameState.Level;
@@ -51,16 +47,10 @@ namespace SpellingRace.Managers.GameplayManagers
 
         public void Update(GameTime gameTime)
         {
-            // _life = _gameStateManager.GetLife();
-            // _score = _gameStateManager.GetScore();
-            // _level = _gameStateManager.GetLevel(); 
-            // _timer = _gameStateManager.GetTime();
             _life = _gameState.Life;
             _score = _gameState.Score;
             _level = _gameState.Level;
             _timer = _gameState.Time;
-
-            //_ingameMenu.Update();
         }
 
         public void Draw()

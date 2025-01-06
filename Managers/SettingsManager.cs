@@ -7,19 +7,17 @@ namespace SpellingRace.Managers
     public class SettingsManager
     {
         public Difficulty Difficulty { get; set; } = Difficulty.EASY;
-        // private GameStateManager _gameStateManager;
+
         private GameState _gameState;
-        //private GameSettings _gameSettings;
+        private Settings _settings;
 
         private readonly string _filePath;
         private string _jsonContent;
-        private Settings _settings;
+
 
         public SettingsManager()
         {
-            //_gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
             _filePath = Path.Combine(AppContext.BaseDirectory, "Content", "Resources/settings.json");
-            
         }
     
         public void SaveSettings(int difficulty)
@@ -48,42 +46,6 @@ namespace SpellingRace.Managers
                 2 => Difficulty.HARD,
                 _ => Difficulty.EASY
             };
-
-            // _gameState.Difficulty = _settings.Setting[0].DifficultyLevel switch
-            // {
-            //     0 => Difficulty.EASY,
-            //     1 => Difficulty.NORMAL,
-            //     2 => Difficulty.HARD,
-            //     _ => Difficulty.EASY
-            // };
-
-            // switch(_gameState.Difficulty)
-            // {
-            //     case Difficulty.EASY:
-            //         _gameState.Life = 6;
-            //         _gameState.SpeedMultiplier = 1f;
-            //         _gameState.PathsNumber = 2;
-            //         break;
-
-            //     case Difficulty.NORMAL:
-            //         _gameState.Life = 5;
-            //         _gameState.SpeedMultiplier = 3f;
-            //         _gameState.PathsNumber = 2;
-            //         break;
-
-            //     case Difficulty.HARD:
-            //         _gameState.Life = 4;
-            //         _gameState.SpeedMultiplier = 5f;
-            //         _gameState.PathsNumber = 2;
-            //         break;
-
-            //     default:
-            //         _gameState.Life = 6;
-            //         _gameState.SpeedMultiplier = 1f;
-            //         _gameState.PathsNumber = 2;
-            //         break;
-            // }
-
         }
 
         public void LoadGameStateParameters()
@@ -95,7 +57,7 @@ namespace SpellingRace.Managers
                 case Difficulty.EASY:
                     _gameState.Difficulty = Difficulty.EASY;
                     _gameState.Life = 6;
-                    _gameState.SpeedMultiplier = 1f;
+                    _gameState.SpeedMultiplier = 2f;
                     _gameState.PathsNumber = 2;
                     break;
 

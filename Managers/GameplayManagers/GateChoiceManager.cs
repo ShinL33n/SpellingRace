@@ -7,40 +7,27 @@ namespace SpellingRace.Managers.GameplayManagers
 {
     public class GateChoiceManager
     {
-        private GraphicsDeviceManager _graphics;
-        private ContentManager _content;
-
-        private SpriteBatch _spriteBatch;
-        private GameState _gameState;
         private GatesManager _gatesManager;
+        private GameState _gameState;
 
-        Vector2 windowCenter, centerText;
-        SpriteFont openDyslexicFont;
-        string lastWord, choiceString;
-        bool goodChoice;
+        string lastWord;
+
 
         public GateChoiceManager(GatesManager gatesManager)
         {
             _gatesManager = gatesManager;
-
-            _spriteBatch = ServiceProvider.Resolve<SpriteBatch>();
-            _graphics = ServiceProvider.Resolve<GraphicsDeviceManager>();
             _gameState = ServiceProvider.Resolve<GameState>();
-            _content = ServiceProvider.Resolve<ContentManager>();
 
-            windowCenter = new(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
-            openDyslexicFont = _content.Load<SpriteFont>("Fonts/OpenDyslexicFont");
             lastWord = string.Empty;
-            //goodChoice = true;
         }
 
 
-        public void Update(GameTime gameTime, Vector2 playerPosition)//, float gatesYPosition, int correctSegment, string correctWord)
+        public void Update(GameTime gameTime, Vector2 playerPosition)
         {
             string correctWord = _gatesManager.GetCorrectWord();
             int correctWordSegment = _gatesManager.GetCorrectWordGateSegment();
 
-            if (_gatesManager.GetGatesYPosition() >= playerPosition.Y && lastWord != correctWord) // BUG: if new drawed word is the same as the previous one then nothing happens (with the score/life)
+            if (_gatesManager.GetGatesYPosition() >= playerPosition.Y && lastWord != correctWord)
             {
                 int playerSegment = GetPlayerSegmentPosition(playerPosition.X);
                 if(playerSegment == correctWordSegment)
@@ -48,24 +35,20 @@ namespace SpellingRace.Managers.GameplayManagers
                     _gameState.GatesPassed++;
                     _gameState.Score++;
                     lastWord = correctWord;
-                    //goodChoice = true;
-                    //choiceString = "DOBRZE";
                 }
                 else
                 {
                     _gameState.GatesPassed++;
                     _gameState.Life--;
                     lastWord = correctWord;
-                    //goodChoice = false;
                     if(_gameState.Life < 1) Game1.SceneManager.AddScene(new GameOverScene());
-                    //choiceString = "ŹLE";
                 }
             }
         }
 
         public void Draw()
         {
-            //_spriteBatch.DrawString(openDyslexicFont, choiceString, centerText, Color.LimeGreen, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
+            // TO DO: Good / Bad choice text;
         }
 
         private int GetPlayerSegmentPosition(float playerPosition)

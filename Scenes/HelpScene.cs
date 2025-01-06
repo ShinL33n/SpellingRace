@@ -8,10 +8,7 @@ namespace SpellingRace.Scenes
     {
         private Background _background;
 
-        public HelpScene()
-        {
-
-        }
+        public HelpScene(){}
 
         public override void LoadContent()
         {
