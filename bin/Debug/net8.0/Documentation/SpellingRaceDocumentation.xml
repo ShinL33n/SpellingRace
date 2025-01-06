@@ -1,0 +1,895 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SpellingRace</name>
+    </assembly>
+    <members>
+        <member name="T:SpellingRace.Core.Game1">
+            <summary>
+            Game main class
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Core.Game1.SceneManager">
+            <summary>
+            SceneManager static property
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Core.Game1.#ctor">
+            <summary>
+            Game constructor
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Core.Game1.Initialize">
+            <summary>
+            Initialization logic method
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Core.Game1.LoadContent">
+            <summary>
+            Loading content method
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Core.Game1.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update method called multiple times per second
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Core.Game1.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Drawing elements onto screen method
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="T:SpellingRace.Global.ServiceProvider">
+            <summary>
+            Container method for Dependency injection 
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Global.ServiceProvider.Register``1(``0)">
+            <summary>
+            Registering services instance of given type T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="service"></param>
+        </member>
+        <member name="M:SpellingRace.Global.ServiceProvider.Resolve``1">
+            <summary>
+            Resolve service instance of given type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:SpellingRace.Gui.Backgrounds.Background">
+            <summary>
+            Class for implementing game backgrounds
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Backgrounds.Background.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Full screen background constructor
+            </summary>
+            <param name="texture"></param>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Gui.Backgrounds.Background.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Background constructor with given position and size
+            </summary>
+            <param name="position"></param>
+            <param name="size"></param>
+            <param name="texture"></param>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Gui.Backgrounds.Background.Update(Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Update background texture
+            </summary>
+            <param name="texture"></param>
+        </member>
+        <member name="M:SpellingRace.Gui.Backgrounds.Background.Draw">
+            <summary>
+            Draw background
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Gui.Elements.Button">
+            <summary>
+            Button element class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Button.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Color,System.String,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Boolean)">
+            <summary>
+            Button constructor without fill
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Button.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Color,System.String,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Boolean)">
+            <summary>
+            Button constructor with texture fill
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Button.Clicked">
+            <summary>
+            Method to check if button was clicked
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Button.Update">
+            <summary>
+            Method to update button properties
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Button.Draw">
+            <summary>
+            Draw button
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Gui.Elements.Sprite">
+            <summary>
+            Sprite element class for adding objects into game
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Sprite.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,System.Boolean)">
+            <summary>
+            Sprite constructor without text
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Sprite.#ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Color,System.String,System.Boolean)">
+            <summary>
+            Sprite constructor with text
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Sprite.Update(System.Nullable{Microsoft.Xna.Framework.Vector2},System.Nullable{Microsoft.Xna.Framework.Vector2})">
+            <summary>
+            Update sprite properties - position, size
+            </summary>
+            <param name="position">nullable Vector2</param>
+            <param name="size">nullable Vector2</param>
+        </member>
+        <member name="M:SpellingRace.Gui.Elements.Sprite.Draw">
+            <summary>
+            Draw sprite
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.EnvironmentBackgroundManager">
+            <summary>
+            Manager for game environment backgrounds 
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.EnvironmentBackgroundManager.#ctor">
+            <summary>
+            EnvironmentBackground constructor
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.EnvironmentBackgroundManager.Update">
+            <summary>
+            Update background based on game level
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.EnvironmentBackgroundManager.Draw">
+            <summary>
+            Draw environment backgrounds
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.EnvironmentBackgroundManager.GetCurrentLevelBackground">
+            <summary>
+            Returns current environment background based on game level
+            </summary>
+            <returns>Dictionary</returns>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.GameInfoDisplayManager">
+            <summary>
+            Manager for displaying game informations 
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GameInfoDisplayManager.#ctor">
+            <summary>
+            GameInfoDisplayManager constructor
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GameInfoDisplayManager.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update game informations
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GameInfoDisplayManager.Draw">
+            <summary>
+            Draw informations on screen menu
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.GameStateManager">
+            <summary>
+            Manager for GameState class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GameStateManager.#ctor">
+            <summary>
+            GameStateManager constructor
+            Sets default GameState properties
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GameStateManager.RegisterGameState">
+            <summary>
+            Registers GameState instance in ServiceProvider
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GameStateManager.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates GameState properties
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.GateChoiceManager">
+            <summary>
+            Manager for player choices 
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GateChoiceManager.#ctor(SpellingRace.Managers.GameplayManagers.GatesManager)">
+            <summary>
+            GateChoiceManager constructor
+            </summary>
+            <param name="gatesManager"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GateChoiceManager.Update(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Updates GameState properties based on player choices
+            </summary>
+            <param name="gameTime"></param>
+            <param name="playerPosition"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GateChoiceManager.Draw">
+            <summary>
+            Not implemented!
+            Draws text if player made a good choice or not
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GateChoiceManager.GetPlayerSegmentPosition(System.Single)">
+            <summary>
+            Returns segment that the player is in 
+            </summary>
+            <param name="playerPosition"></param>
+            <returns>int</returns>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.GatesManager">
+            <summary>
+            Managers for gates behavior
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.#ctor">
+            <summary>
+            GatesManager constructor
+            Sets gates and its properties based on game difficulty level
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.CreateGates(System.Collections.Generic.List{System.String})">
+            <summary>
+            Creates gates
+            </summary>
+            <param name="words"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.Update">
+            <summary>
+            Upadates gates positions
+            </summary>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.Draw">
+            <summary>
+            Draws gates
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.GetGatesYPosition">
+            <summary>
+            Returns gates Y position
+            </summary>
+            <returns>float</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.GetCorrectWordGateSegment">
+            <summary>
+            Returns segment of current word gate
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.GetCorrectWord">
+            <summary>
+            Returns correct word
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.EasyDifficultyGatesMovement">
+            <summary>
+            Manages gates movement for easy game difficulty
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.NormalDifficultyGatesMovement">
+            <summary>
+            Manages gates movement for normal game difficulty
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.GatesManager.HardDifficultyGatesMovement">
+            <summary>
+            Manages gates movement for hard game difficulty
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.MovementManager">
+            <summary>
+            Manager for player movemnt
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.MovementManager.#ctor(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            MovementManager constructor
+            </summary>
+            <param name="playerPosition"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.MovementManager.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates player position
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.MovementManager.GetPlayerPosition">
+            <summary>
+            Return player position
+            </summary>
+            <returns>Vector2</returns>
+        </member>
+        <member name="T:SpellingRace.Managers.GameplayManagers.WordsManager">
+            <summary>
+            Manager for words coming from dictionary
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.WordsManager.#ctor">
+            <summary>
+            WordsManager constructor
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.WordsManager.GetWords(SpellingRace.Models.Difficulty,System.Int32)">
+            <summary>
+            Returns list of words that fulfill game difficulty and levels requirements
+            </summary>
+            <param name="difficulty"></param>
+            <param name="level"></param>
+            <returns>List</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:SpellingRace.Managers.GameplayManagers.WordsManager.GetCorrectWord">
+            <summary>
+            Returns corrent word
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:SpellingRace.Managers.InputManager">
+            <summary>
+            Manager for handling keyboard and mouse inputs
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Managers.InputManager.MouseCursor">
+            <summary>
+            Mouse cursor property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Managers.InputManager.MousePosition">
+            <summary>
+            Mouse position property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Managers.InputManager.LeftMouseButtonClicked">
+            <summary>
+            Was Left mouse button clicked property
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.InputManager.WasKeyTriggered(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns if the key was triggered
+            </summary>
+            <param name="key"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.InputManager.WasKeyReleased(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns if the key was released
+            </summary>
+            <param name="key"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.InputManager.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns if the key is pressed
+            </summary>
+            <param name="key"></param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.InputManager.Update">
+            <summary>
+            Updates keyboard and mouse actions
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Managers.SceneManager">
+            <summary>
+            Manager for handling different game scenes
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Managers.SceneManager.IsEmpty">
+            <summary>
+            Returns if there is no scene
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.#ctor">
+            <summary>
+            SceneManager constructor
+            Screates scenes stack
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.AddScene(SpellingRace.Models.Scene)">
+            <summary>
+            Adds scene to the stack
+            </summary>
+            <param name="scene"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.RemoveCurrentScene">
+            <summary>
+            Removes scene from the stack
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.GetCurrentScene">
+            <summary>
+            Returns current scene
+            </summary>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.ClearScenes">
+            <summary>
+            Clears scenes stack and leaves MenuScene
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates scenes
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.SceneManager.Draw">
+            <summary>
+            Draws scene
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Managers.SettingsManager">
+            <summary>
+            Manager for handling game settings from json file
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Managers.SettingsManager.Difficulty">
+            <summary>
+            Game difficulty property
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SettingsManager.#ctor">
+            <summary>
+            SceneManager constructor
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SettingsManager.SaveSettings(System.Int32)">
+            <summary>
+            Saves difficulty setting into json 
+            </summary>
+            <param name="difficulty"></param>
+        </member>
+        <member name="M:SpellingRace.Managers.SettingsManager.LoadSettings">
+            <summary>
+            Loads diffculty setting from json
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Managers.SettingsManager.LoadGameStateParameters">
+            <summary>
+            Loads GameState parameters from loaded difficulty
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="T:SpellingRace.Models.Difficulty">
+            <summary>
+            Difficulty model class
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Difficulty.EASY">
+            <summary>
+            Easy difficulty enum
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Difficulty.NORMAL">
+            <summary>
+            Normal difficulty enum
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Difficulty.HARD">
+            <summary>
+            Hard difficulty enum
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.GameState">
+            <summary>
+            Game state model class
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.Time">
+            <summary>
+            Ingame time passed property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.Level">
+            <summary>
+            Current game level property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.GatesPassed">
+            <summary>
+            Passed gates property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.Life">
+            <summary>
+            Player life property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.Score">
+            <summary>
+            Player score property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.SpeedMultiplier">
+            <summary>
+            Game speed property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.GameState.Difficulty">
+            <summary>
+            Game difficulty property
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.Gate">
+            <summary>
+            Gate model class
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Gate.Word">
+            <summary>
+            Gate word property
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.Object">
+            <summary>
+            Model for game objects
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Object.Position">
+            <summary>
+            Object position property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Object.Size">
+            <summary>
+            Object size property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Object.Sprite">
+            <summary>
+            Object sprite property
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.Player">
+            <summary>
+            Player model class
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.Scene">
+            <summary>
+            Scene model class
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Scene.SceneQuited">
+            <summary>
+            Did user quit form scene property
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene._content">
+            <summary>
+            MonoGame ContentManager 
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene._graphics">
+            <summary>
+            MonoGame GraphicsDeviceManager 
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene._spriteBatch">
+            <summary>
+            MonoGame SpriteBatch 
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene.windowSize">
+            <summary>
+            Window size Vector2
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene.windowCenter">
+            <summary>
+            Window center Vector2
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene.interFont">
+            <summary>
+            Font sprite
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene.openDyslexicFont">
+            <summary>
+            Font sprite
+            </summary>
+        </member>
+        <member name="F:SpellingRace.Models.Scene.sceneTitle">
+            <summary>
+            Scene title string
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Models.Scene.#ctor">
+            <summary>
+            Scene constructor
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Models.Scene.LoadContent">
+            <summary>
+            Loads content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Models.Scene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update method called multiple times per second
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Models.Scene.Draw">
+            <summary>
+            Draws content
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.DifficultySetting">
+            <summary>
+            Difficulty setting model
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.DifficultySetting.DifficultyLevel">
+            <summary>
+            Difficulty level property 
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.Settings">
+            <summary>
+            Settings model from json setting file
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Settings.Setting">
+            <summary>
+            Settings property list
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.IncorrectForm">
+            <summary>
+            Incorect word form model
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.IncorrectForm.Word">
+            <summary>
+            Word property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.IncorrectForm.IncorrectForms">
+            <summary>
+            Incorect forms property list
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.Form">
+            <summary>
+            Word form model
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Form.FormNumber">
+            <summary>
+            Number of word forms property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.Form.Words">
+            <summary>
+            Words property list
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Models.DifficultyLevel">
+            <summary>
+            Difficulty level model
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.DifficultyLevel.Level">
+            <summary>
+            Level property
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.DifficultyLevel.Forms">
+            <summary>
+            Words forms property list
+            </summary>       
+        </member>
+        <member name="T:SpellingRace.Models.WordsList">
+            <summary>
+            Words list model from json setting file
+            </summary>
+        </member>
+        <member name="P:SpellingRace.Models.WordsList.DifficultyLevels">
+            <summary>
+            Difficulty level property list
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Scenes.GameOverScene">
+            <summary>
+            Game over screen class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameOverScene.LoadContent">
+            <summary>
+            Loads scene content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameOverScene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates scene content
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameOverScene.Draw">
+            <summary>
+            Draws screen content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameOverScene.AddButtons">
+            <summary>
+            Adds buttons to the scene
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Scenes.GameScene">
+            <summary>
+            Game screen class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameScene.LoadContent">
+            <summary>
+            Loads game content
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameScene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates game content
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameScene.Draw">
+            <summary>
+            Draws game content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.GameScene.CreatePlayer">
+            <summary>
+            Creates content
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Scenes.HelpScene">
+            <summary>
+            Help screen class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.HelpScene.LoadContent">
+            <summary>
+            Loads content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.HelpScene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates content
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Scenes.HelpScene.Draw">
+            <summary>
+            Draws content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.HelpScene.GetXStringCenter(System.String,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+            <summary>
+            Returns X text center
+            </summary>
+            <param name="text"></param>
+            <param name="font"></param>
+            <returns>float</returns>
+        </member>
+        <member name="T:SpellingRace.Scenes.MenuScene">
+            <summary>
+            Menu screen class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.MenuScene.LoadContent">
+            <summary>
+            Load menu content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.MenuScene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates menu content
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Scenes.MenuScene.Draw">
+            <summary>
+            Draws menu content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.MenuScene.AddButtons">
+            <summary>
+            Add buttons to the scene
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Scenes.PauseScene">
+            <summary>
+            Pause screen class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.PauseScene.LoadContent">
+            <summary>
+            Loads content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.PauseScene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates content
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Scenes.PauseScene.Draw">
+            <summary>
+            Draws content
+            </summary>
+        </member>
+        <member name="T:SpellingRace.Scenes.SettingsScene">
+            <summary>
+            Settings screen class
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.SettingsScene.LoadContent">
+            <summary>
+            Load settings content
+            </summary>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:SpellingRace.Scenes.SettingsScene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates settings content
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:SpellingRace.Scenes.SettingsScene.Draw">
+            <summary>
+            Draws settings content
+            </summary>
+        </member>
+        <member name="M:SpellingRace.Scenes.SettingsScene.AddButtons">
+            <summary>
+            Adds buttons to the scene
+            </summary>
+        </member>
+    </members>
+</doc>

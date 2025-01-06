@@ -4,12 +4,16 @@ using Microsoft.Xna.Framework.Input;
 namespace SpellingRace.Scenes
 {
     // JPWP: Scena odpowiadająca za wyświetlenie pomocy
+    /// <summary>
+    /// Help screen class
+    /// </summary>
     public class HelpScene : Scene
     {
         private Background _background;
 
-        public HelpScene(){}
-
+        /// <summary>
+        /// Loads content
+        /// </summary>
         public override void LoadContent()
         {
             sceneTitle = "POMOC";
@@ -17,12 +21,19 @@ namespace SpellingRace.Scenes
             _background = new(_content.Load<Texture2D>("Media/Backgrounds/OptionsBackground"));
         }
 
+        /// <summary>
+        /// Updates content
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             InputManager.Update();
             if(InputManager.WasKeyTriggered(Keys.Escape)) SceneQuited = true;
         }
 
+        /// <summary>
+        /// Draws content
+        /// </summary>
         public override void Draw()
         {
             _background.Draw();
@@ -39,6 +50,12 @@ namespace SpellingRace.Scenes
             _spriteBatch.DrawString(interFont, "życia. Utrata wszytkich żyć kończy grę.", new Vector2(60,590), Color.White, 0f, Vector2.Zero, 0.65f, SpriteEffects.None, 0f);
         }
 
+        /// <summary>
+        /// Returns X text center
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="font"></param>
+        /// <returns>float</returns>
         private float GetXStringCenter(string text, SpriteFont font)
         {
             return windowCenter.X - font.MeasureString(text).X / 2;

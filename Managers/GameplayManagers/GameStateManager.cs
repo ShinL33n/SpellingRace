@@ -2,10 +2,17 @@ using System;
 
 namespace SpellingRace.Managers.GameplayManagers
 {
+    /// <summary>
+    /// Manager for GameState class
+    /// </summary>
     public class GameStateManager
     {
         private GameState _gameState;
 
+        /// <summary>
+        /// GameStateManager constructor
+        /// Sets default GameState properties
+        /// </summary>
         public GameStateManager()
         {
             _gameState = new GameState {
@@ -19,11 +26,18 @@ namespace SpellingRace.Managers.GameplayManagers
 
         }
 
+        /// <summary>
+        /// Registers GameState instance in ServiceProvider
+        /// </summary>
         public void RegisterGameState()
         {
             ServiceProvider.Register(_gameState);
         }
 
+        /// <summary>
+        /// Updates GameState properties
+        /// </summary>
+        /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
 

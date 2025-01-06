@@ -2,6 +2,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpellingRace.Gui.Elements
 {
+    /// <summary>
+    /// Sprite element class for adding objects into game
+    /// </summary>
     public class Sprite
     {
 
@@ -13,14 +16,10 @@ namespace SpellingRace.Gui.Elements
         private bool _alignToCenterPoint;
         private Color _textColor;
         private float _scale;
-        private Vector2 vector21;
-        private Vector2 vector22;
-        private Texture2D texture2D;
-        private SpriteFont spriteFont;
         private readonly SpriteBatch _spriteBatch;
 
         /// <summary>
-        /// Sprite without text
+        /// Sprite constructor without text
         /// </summary>
         public Sprite(Vector2 position, Vector2 size, Texture2D texture, bool alignToCenterPoint = false)
         {
@@ -40,7 +39,7 @@ namespace SpellingRace.Gui.Elements
         }
 
         /// <summary>
-        /// Sprite with text
+        /// Sprite constructor with text
         /// </summary>
         public Sprite(Vector2 position, Vector2 size, Texture2D texture, SpriteFont font, Color textColor, string text, bool alignToCenterPoint = false)
         {
@@ -65,7 +64,11 @@ namespace SpellingRace.Gui.Elements
             _alignToCenterPoint = alignToCenterPoint;
         }
 
-
+        /// <summary>
+        /// Update sprite properties - position, size
+        /// </summary>
+        /// <param name="position">nullable Vector2</param>
+        /// <param name="size">nullable Vector2</param>
         public void Update(Vector2? position = null, Vector2? size = null)
         {
             _position = position ?? _position;
@@ -83,6 +86,9 @@ namespace SpellingRace.Gui.Elements
             }
         }
 
+        /// <summary>
+        /// Draw sprite
+        /// </summary>
         public void Draw()
         {
             _spriteBatch.Draw(_texture, _spriteBoundaries, Color.White);

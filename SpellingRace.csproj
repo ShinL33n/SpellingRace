@@ -10,6 +10,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Content\Media\Icons\Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <DocumentationFile>bin\Debug\net8.0\Documentation\SpellingRaceDocumentation.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="Content\Media\Icons\Icon.ico" />
     <None Remove="Content\Media\Icons\Icon.bmp" />

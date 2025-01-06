@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpellingRace.Managers.GameplayManagers
 {
+    /// <summary>
+    /// Manager for displaying game informations 
+    /// </summary>
     public class GameInfoDisplayManager
     {
         private Sprite _ingameMenu;
@@ -21,7 +24,10 @@ namespace SpellingRace.Managers.GameplayManagers
         Vector2 windowSize;
         SpriteFont font;
 
-
+        /// <summary>
+        /// GameInfoDisplayManager constructor
+        /// </summary>
+        /// <exception cref="NullReferenceException"></exception>
         public GameInfoDisplayManager()
         {
             _graphics = ServiceProvider.Resolve<GraphicsDeviceManager>() ?? throw new NullReferenceException("GraphicsDeviceManager not registered in ServiceProvider.");
@@ -45,6 +51,10 @@ namespace SpellingRace.Managers.GameplayManagers
             _timer = _gameState.Time;
         }
 
+        /// <summary>
+        /// Update game informations
+        /// </summary>
+        /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
             _life = _gameState.Life;
@@ -53,6 +63,9 @@ namespace SpellingRace.Managers.GameplayManagers
             _timer = _gameState.Time;
         }
 
+        /// <summary>
+        /// Draw informations on screen menu
+        /// </summary>
         public void Draw()
         {
             _ingameMenu.Draw();

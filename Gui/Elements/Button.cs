@@ -1,7 +1,10 @@
 using Microsoft.Xna.Framework.Graphics;
 
 namespace SpellingRace.Gui.Elements
-{
+{   
+    /// <summary>
+    /// Button element class
+    /// </summary>
     public class Button
     {
         private enum _buttonStates { IDLE, HOVER, ACTIVE }
@@ -20,7 +23,7 @@ namespace SpellingRace.Gui.Elements
 
 
         /// <summary>
-        /// Button without fill
+        /// Button constructor without fill
         /// </summary>
         public Button(Vector2 position, Vector2 size, SpriteFont font, Color textColor, string text, Color idleColor, Color hoverColor, Color activeColor, bool alignToCenterPoint = false)
         {
@@ -52,7 +55,7 @@ namespace SpellingRace.Gui.Elements
         }
 
         /// <summary>
-        /// Button with texture fill
+        /// Button constructor with texture fill
         /// </summary>
         public Button(Vector2 position, Vector2 size, Texture2D texture, SpriteFont font, Color textColor, string text, Color idleColor, Color hoverColor, Color activeColor, bool alignToCenterPoint = false)
         {
@@ -80,11 +83,18 @@ namespace SpellingRace.Gui.Elements
             _buttonBoundaries = new Rectangle((int)_position.X, (int)_position.Y, (int)_size.X, (int)_size.Y); 
         }
 
+        /// <summary>
+        /// Method to check if button was clicked
+        /// </summary>
+        /// <returns></returns>
         public bool Clicked()
         {
             return _buttonState == _buttonStates.ACTIVE;
         }
 
+        /// <summary>
+        /// Method to update button properties
+        /// </summary>
         public void Update()
         {
             _buttonState = _buttonStates.IDLE;
@@ -108,6 +118,9 @@ namespace SpellingRace.Gui.Elements
             };
         }
 
+        /// <summary>
+        /// Draw button
+        /// </summary>
         public void Draw()
         {
             _spriteBatch.Draw(_texture, _buttonBoundaries, _maskColor);

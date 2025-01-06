@@ -91,3 +91,5 @@ C:/Pliki/Dokumenty/Programming Projects/C#/SpellingRace/bin/Debug/net8.0/Content
 /home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Media/Backgrounds/MushroomsBackgroundRight.xnb
 /home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Media/Backgrounds/SeaBackgroundLeft.xnb
 /home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Content/Media/Backgrounds/SeaBackgroundRight.xnb
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/Documentation/SpellingRaceDocumentation.xml
+/home/releme/Dokumenty/Programming Projects/C#/MonoGame/SpellingRace/bin/Debug/net8.0/SpellingRaceDocumentation.xml

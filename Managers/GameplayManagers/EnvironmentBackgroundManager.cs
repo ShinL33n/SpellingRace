@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpellingRace.Managers.GameplayManagers
 {
+    /// <summary>
+    /// Manager for game environment backgrounds 
+    /// </summary>
     public class EnvironmentBackgroundManager
     {
         private Background _environmentBackgroundLeft, _environmentBackgroundRight;
@@ -12,7 +15,10 @@ namespace SpellingRace.Managers.GameplayManagers
 
         private GameState _gameState;
 
-
+        /// <summary>
+        /// EnvironmentBackground constructor
+        /// </summary>
+        /// <exception cref="NullReferenceException"></exception>
         public EnvironmentBackgroundManager()
         {
             _gameState = _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
@@ -32,18 +38,28 @@ namespace SpellingRace.Managers.GameplayManagers
             );
         }
 
+        /// <summary>
+        /// Update background based on game level
+        /// </summary>
         public void Update()
         {
             _environmentBackgroundLeft.Update(GetCurrentLevelBackground()["left"]);
             _environmentBackgroundRight.Update(GetCurrentLevelBackground()["right"]);
         }
 
+        /// <summary>
+        /// Draw environment backgrounds
+        /// </summary>
         public void Draw()
         {
             _environmentBackgroundLeft.Draw();
             _environmentBackgroundRight.Draw();
         }
 
+        /// <summary>
+        /// Returns current environment background based on game level
+        /// </summary>
+        /// <returns>Dictionary</returns>
         private Dictionary<string, Texture2D> GetCurrentLevelBackground()
         {
             Dictionary<string, Texture2D> textures = new();

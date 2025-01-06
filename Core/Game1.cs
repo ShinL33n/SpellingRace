@@ -6,15 +6,23 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SpellingRace.Core
 {
+    /// <summary>
+    /// Game main class
+    /// </summary>
     public class Game1 : Game
     {
+        /// <summary>
+        /// SceneManager static property
+        /// </summary>
         public static SceneManager SceneManager;
         
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SettingsManager _settingsManager;
 
-
+        /// <summary>
+        /// Game constructor
+        /// </summary>
         public Game1()
         {
             Content.RootDirectory = "Content";
@@ -22,9 +30,11 @@ namespace SpellingRace.Core
             _graphics = new(this);
             SceneManager = new();
             _settingsManager = new();
-
         }
 
+        /// <summary>
+        /// Initialization logic method
+        /// </summary>
         protected override void Initialize()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -44,12 +54,18 @@ namespace SpellingRace.Core
             base.Initialize();
         }
 
-
+        /// <summary>
+        /// Loading content method
+        /// </summary>
         protected override void LoadContent()
         {
             SceneManager.AddScene(new MenuScene());
         }
 
+        /// <summary>
+        /// Update method called multiple times per second
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(GameTime gameTime)
         {
             SceneManager.Update(gameTime);
@@ -59,6 +75,10 @@ namespace SpellingRace.Core
             base.Update(gameTime);
         }
 
+        /// <summary>
+        /// Drawing elements onto screen method
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Draw(GameTime gameTime)
         {
             _graphics.GraphicsDevice.Clear(Color.Black);

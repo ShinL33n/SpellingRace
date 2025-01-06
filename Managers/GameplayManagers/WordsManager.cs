@@ -5,6 +5,9 @@ using System.Text.Json;
 
 namespace SpellingRace.Managers.GameplayManagers
 {
+    /// <summary>
+    /// Manager for words coming from dictionary
+    /// </summary>
     public class WordsManager
     {  
         private readonly WordsList _wordsList;
@@ -13,6 +16,9 @@ namespace SpellingRace.Managers.GameplayManagers
         private string _correctWord, _lastWord;
 
 
+        /// <summary>
+        /// WordsManager constructor
+        /// </summary>
         public WordsManager()
         {
             _filePath = Path.Combine(AppContext.BaseDirectory, "Content", "Resources/words.json");
@@ -22,7 +28,13 @@ namespace SpellingRace.Managers.GameplayManagers
             _lastWord = string.Empty;
         }
 
-
+        /// <summary>
+        /// Returns list of words that fulfill game difficulty and levels requirements
+        /// </summary>
+        /// <param name="difficulty"></param>
+        /// <param name="level"></param>
+        /// <returns>List</returns>
+        /// <exception cref="Exception"></exception>
         // Method refactor idea (if words dictionary will become bigger [at least 10 words with 4+ forms]):
         // Draw and shuffle words once per level to a list and delete them from it after being used
         // If all the words form the dictionary are used draw and shuffle all of them again 
@@ -117,7 +129,11 @@ namespace SpellingRace.Managers.GameplayManagers
 
             return words;
         }
-
+        
+        /// <summary>
+        /// Returns corrent word
+        /// </summary>
+        /// <returns>string</returns>
         public string GetCorrectWord()
         {
             return _correctWord;

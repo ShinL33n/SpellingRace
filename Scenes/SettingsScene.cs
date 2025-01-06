@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework.Input;
 namespace SpellingRace.Scenes
 {
     // JPWP: Scena odpowiadająca za wyświetlenie menu ustawień
+    /// <summary>
+    /// Settings screen class
+    /// </summary>
     public class SettingsScene : Scene
     {
         private Background _background;
@@ -18,8 +21,10 @@ namespace SpellingRace.Scenes
         Texture2D optionBorderTexture;
         
 
-        public SettingsScene(){}
-
+        /// <summary>
+        /// Load settings content
+        /// </summary>
+        /// <exception cref="NullReferenceException"></exception>
         public override void LoadContent()
         {
             sceneTitle = "USTAWIENIA";
@@ -37,6 +42,10 @@ namespace SpellingRace.Scenes
             AddButtons();
         }
 
+        /// <summary>
+        /// Updates settings content
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             InputManager.Update();
@@ -69,6 +78,9 @@ namespace SpellingRace.Scenes
             };
         }
 
+        /// <summary>
+        /// Draws settings content
+        /// </summary>
         public override void Draw()
         {
             _background.Draw();
@@ -82,7 +94,9 @@ namespace SpellingRace.Scenes
             foreach(var button in _buttons.Values) button.Draw();
         }
 
-
+        /// <summary>
+        /// Adds buttons to the scene
+        /// </summary>
         private void AddButtons()
         {
             Vector2 buttonSize = new(200, 100);

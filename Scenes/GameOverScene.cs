@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SpellingRace.Scenes
 {
+    /// <summary>
+    /// Game over screen class
+    /// </summary>
     public class GameOverScene : Scene
     {
         private GameState _gameState;
@@ -13,7 +16,9 @@ namespace SpellingRace.Scenes
         Texture2D menuOptionBorderTexture;
         string endTime;
 
-
+        /// <summary>
+        /// Loads scene content
+        /// </summary>
         public override void LoadContent()
         {
             sceneTitle = "KONIEC GRY";
@@ -26,6 +31,10 @@ namespace SpellingRace.Scenes
             AddButtons();
         }
 
+        /// <summary>
+        /// Updates scene content
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             InputManager.Update();
@@ -45,6 +54,9 @@ namespace SpellingRace.Scenes
             }
         }
 
+        /// <summary>
+        /// Draws screen content
+        /// </summary>
         public override void Draw()
         {
             _spriteBatch.DrawString(
@@ -65,7 +77,10 @@ namespace SpellingRace.Scenes
             foreach(var button in _buttons.Values) button.Draw();
         }
 
-         private void AddButtons()
+        /// <summary>
+        /// Adds buttons to the scene
+        /// </summary>
+        private void AddButtons()
         {
             Vector2 buttonSize = new(581, 116);
 

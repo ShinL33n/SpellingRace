@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpellingRace.Managers.GameplayManagers
 {
+    /// <summary>
+    /// Manager for player choices 
+    /// </summary>
     public class GateChoiceManager
     {
         private GatesManager _gatesManager;
@@ -12,7 +15,10 @@ namespace SpellingRace.Managers.GameplayManagers
 
         string lastWord;
 
-
+        /// <summary>
+        /// GateChoiceManager constructor
+        /// </summary>
+        /// <param name="gatesManager"></param>
         public GateChoiceManager(GatesManager gatesManager)
         {
             _gatesManager = gatesManager;
@@ -21,7 +27,11 @@ namespace SpellingRace.Managers.GameplayManagers
             lastWord = string.Empty;
         }
 
-
+        /// <summary>
+        /// Updates GameState properties based on player choices
+        /// </summary>
+        /// <param name="gameTime"></param>
+        /// <param name="playerPosition"></param>
         public void Update(GameTime gameTime, Vector2 playerPosition)
         {
             string correctWord = _gatesManager.GetCorrectWord();
@@ -46,11 +56,20 @@ namespace SpellingRace.Managers.GameplayManagers
             }
         }
 
+        /// <summary>
+        /// Not implemented!
+        /// Draws text if player made a good choice or not
+        /// </summary>
         public void Draw()
         {
             // TO DO: Good / Bad choice text;
         }
 
+        /// <summary>
+        /// Returns segment that the player is in 
+        /// </summary>
+        /// <param name="playerPosition"></param>
+        /// <returns>int</returns>
         private int GetPlayerSegmentPosition(float playerPosition)
         {
             int segment = 0;

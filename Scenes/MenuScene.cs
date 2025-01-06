@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework.Input;
 namespace SpellingRace.Scenes
 {
     // JPWP: Scena odpowiadająca za wyświetlenie menu głównego
+    /// <summary>
+    /// Menu screen class
+    /// </summary>
     public class MenuScene : Scene
     {        
         private Dictionary<string, Button> _buttons;
@@ -14,8 +17,9 @@ namespace SpellingRace.Scenes
         Texture2D menuOptionBorderTexture, menuBackgroundTexture, exitTexture;
 
 
-        public MenuScene(){}
-
+        /// <summary>
+        /// Load menu content
+        /// </summary>
         public override void LoadContent()
         {
             sceneTitle = "WYŚCIG Z ORTOGRAFIĄ";
@@ -29,6 +33,10 @@ namespace SpellingRace.Scenes
             AddButtons();
         }
 
+        /// <summary>
+        /// Updates menu content
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             InputManager.Update();
@@ -55,6 +63,9 @@ namespace SpellingRace.Scenes
             }
         }
 
+        /// <summary>
+        /// Draws menu content
+        /// </summary>
         public override void Draw()
         {
             _background.Draw();
@@ -64,7 +75,9 @@ namespace SpellingRace.Scenes
             _spriteBatch.DrawString(openDyslexicFont, sceneTitle, new Vector2(windowCenter.X - openDyslexicFont.MeasureString(sceneTitle).X / 2, 20), Color.White);
         }
 
-
+        /// <summary>
+        /// Add buttons to the scene
+        /// </summary>
         private void AddButtons()
         {
             Vector2 buttonSize = new(581, 116);

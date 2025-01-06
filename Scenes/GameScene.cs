@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.Input;
 namespace SpellingRace.Scenes
 {
     // JPWP: Scena odpowiadająca za wyświetlenie ekranu rozgrywki
+    /// <summary>
+    /// Game screen class
+    /// </summary>
     public class GameScene : Scene
     {
         private EnvironmentBackgroundManager _environmentBackgroundManager;
@@ -19,8 +22,11 @@ namespace SpellingRace.Scenes
         private SettingsManager _settingsManager;
         private GameState _gameState;
 
-        public GameScene(){}
-
+        
+        /// <summary>
+        /// Loads game content
+        /// </summary>
+        /// <exception cref="NullReferenceException"></exception>
         public override void LoadContent()
         {
             CreatePlayer();
@@ -49,6 +55,10 @@ namespace SpellingRace.Scenes
             _movementManager = new(_player.Position);
         }
 
+        /// <summary>
+        /// Updates game content
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             InputManager.Update();
@@ -67,6 +77,9 @@ namespace SpellingRace.Scenes
             _gameInfoDisplayManager.Update(gameTime);
         }
 
+        /// <summary>
+        /// Draws game content
+        /// </summary>
         public override void Draw()
         {
             _environmentBackgroundManager.Draw();
@@ -78,7 +91,9 @@ namespace SpellingRace.Scenes
         }
 
 
-
+        /// <summary>
+        /// Creates content
+        /// </summary>
         private void CreatePlayer()
         {
             _player = new Player { Size = new(135, 230) };

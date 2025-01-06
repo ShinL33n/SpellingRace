@@ -8,6 +8,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpellingRace.Managers.GameplayManagers
 {
+    /// <summary>
+    /// Managers for gates behavior
+    /// </summary>
     public class GatesManager
     {
         private GraphicsDeviceManager _graphics;
@@ -24,7 +27,12 @@ namespace SpellingRace.Managers.GameplayManagers
         Vector2 windowSize, gateMaxSize, gateMinSize;
         Difficulty difficulty;
 
-        
+        /// <summary>
+        /// GatesManager constructor
+        /// Sets gates and its properties based on game difficulty level
+        /// </summary>
+        /// <exception cref="NullReferenceException"></exception>
+        /// <exception cref="Exception"></exception>
         public GatesManager()
         {
             _graphics = ServiceProvider.Resolve<GraphicsDeviceManager>() ?? throw new NullReferenceException("GraphicsDeviceManager not registered in ServiceProvider.");
@@ -80,6 +88,13 @@ namespace SpellingRace.Managers.GameplayManagers
 
         }
 
+        /// <summary>
+        /// Creates gates
+        /// </summary>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        /// <exception cref="NullReferenceException"></exception>
         public Dictionary<string, Gate> CreateGates(List<string> words)
         {
             Dictionary<string, Gate> gates = new();
@@ -159,7 +174,10 @@ namespace SpellingRace.Managers.GameplayManagers
             return gates;
         }
 
-
+        /// <summary>
+        /// Upadates gates positions
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void Update(){
 
             switch (difficulty){
@@ -185,21 +203,36 @@ namespace SpellingRace.Managers.GameplayManagers
             }
         }
 
+        /// <summary>
+        /// Draws gates
+        /// </summary>
         public void Draw()
         {
             foreach(var gate in _gates.Values) gate.Sprite.Draw();
         }
 
+        /// <summary>
+        /// Returns gates Y position
+        /// </summary>
+        /// <returns>float</returns>
         public float GetGatesYPosition()
         {
             return _gates["left"].Position.Y;
         }
 
+        /// <summary>
+        /// Returns segment of current word gate
+        /// </summary>
+        /// <returns>int</returns>
         public int GetCorrectWordGateSegment()
         {
             return _wordsList.IndexOf(_wordsManager.GetCorrectWord());
         }
 
+        /// <summary>
+        /// Returns correct word
+        /// </summary>
+        /// <returns>string</returns>
         public string GetCorrectWord()
         {
             return _wordsManager.GetCorrectWord();
@@ -217,6 +250,9 @@ namespace SpellingRace.Managers.GameplayManagers
             );
         }
 
+        /// <summary>
+        /// Manages gates movement for easy game difficulty
+        /// </summary>
         private void EasyDifficultyGatesMovement()
         {
             float SpeedMultiplier = _gameState.SpeedMultiplier;
@@ -243,6 +279,9 @@ namespace SpellingRace.Managers.GameplayManagers
             }
         }
 
+        /// <summary>
+        /// Manages gates movement for normal game difficulty
+        /// </summary>
         private void NormalDifficultyGatesMovement() 
         {
             float SpeedMultiplier = _gameState.SpeedMultiplier;
@@ -272,6 +311,9 @@ namespace SpellingRace.Managers.GameplayManagers
             }
         }
 
+        /// <summary>
+        /// Manages gates movement for hard game difficulty
+        /// </summary>
         private void HardDifficultyGatesMovement()
         {
             float SpeedMultiplier = _gameState.SpeedMultiplier;

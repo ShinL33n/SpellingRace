@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.Input;
 namespace SpellingRace.Scenes
 {
     // JPWP: Scena odpowiadająca za wyświetlenie menu pauzy w grze
+    /// <summary>
+    /// Pause screen class
+    /// </summary>
     public class PauseScene : Scene 
     {
         private Dictionary<string, Button> _buttons;
@@ -13,8 +16,9 @@ namespace SpellingRace.Scenes
         Texture2D menuOptionBorder, menuBackground;
 
 
-        public PauseScene(){}
-
+        /// <summary>
+        /// Loads content
+        /// </summary>
         public override void LoadContent()
         {
             interFont = _content.Load<SpriteFont>("Fonts/InterFont");
@@ -71,6 +75,10 @@ namespace SpellingRace.Scenes
             };
         }
 
+        /// <summary>
+        /// Updates content
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             InputManager.Update();
@@ -93,6 +101,9 @@ namespace SpellingRace.Scenes
             }
         }
 
+        /// <summary>
+        /// Draws content
+        /// </summary>
         public override void Draw()
         {
             _background.Draw();
