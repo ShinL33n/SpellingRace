@@ -22,6 +22,10 @@ namespace SpellingRace.Managers.GameplayManagers
             _lastWord = string.Empty;
         }
 
+
+        // Method refactor idea (if words dictionary will become bigger [at least 10 words with 4+ forms]):
+        // Draw and shuffle words once per level to a list and delete them from it after being used
+        // If all the words form the dictionary are used draw and shuffle all of them again 
         public List<string> GetWords(Difficulty difficulty, int level)
         {
             List<string> words = new();
@@ -93,16 +97,21 @@ namespace SpellingRace.Managers.GameplayManagers
 
             _correctWord = shuffledWordWithForms.ElementAt(0).Key.ToString();
 
-            while(_lastWord == _correctWord)
+            // Potential bug:
+            // If there is only one word in the dictionary with optimal number of forms then infinity loop will happen
+            // Handle options: timer, counter
+            int infinityLoopHandlerCounter = 0; 
+            while(_lastWord == _correctWord || infinityLoopHandlerCounter > 1000)
             {
                 shuffledWordWithForms = wordWithForms.OrderBy(x => random.Next()).ToDictionary(x => x.Key, x => x.Value);
                 _correctWord = shuffledWordWithForms.ElementAt(0).Key.ToString();
+                infinityLoopHandlerCounter++;
             }
 
             words.Add(_correctWord);
             words.Add(shuffledWordWithForms.ElementAt(0).Value[0].ToString());
             if(difficulty == Difficulty.NORMAL || difficulty == Difficulty.HARD)  words.Add(shuffledWordWithForms.ElementAt(0).Value[1].ToString());
-            if(difficulty == Difficulty.HARD)  words.Add(shuffledWordWithForms.ElementAt(0).Value[2].ToString());
+            if(difficulty == Difficulty.HARD) words.Add(shuffledWordWithForms.ElementAt(0).Value[2].ToString());
 
             words = words.OrderBy(x => random.Next()).ToList();
 

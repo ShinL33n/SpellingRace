@@ -6,6 +6,7 @@ namespace SpellingRace.Managers
 {
     public class SettingsManager
     {
+        public Difficulty Difficulty { get; set; } = Difficulty.EASY;
         // private GameStateManager _gameStateManager;
         private GameState _gameState;
         //private GameSettings _gameSettings;
@@ -16,15 +17,14 @@ namespace SpellingRace.Managers
 
         public SettingsManager()
         {
-            //_gameStateManager = ServiceProvider.Resolve<GameStateManager>() ?? throw new NullReferenceException("GameStateManager not registered in ServiceProvider.");
-            _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
-            //_gameSettings = ServiceProvider.Resolve<GameSettings>() ?? throw new NullReferenceException("GameSettings not registered in ServiceProvider.");
+            //_gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
             _filePath = Path.Combine(AppContext.BaseDirectory, "Content", "Resources/settings.json");
-            _jsonContent = File.ReadAllText(_filePath);
+            
         }
     
         public void SaveSettings(int difficulty)
         {
+            _jsonContent = File.ReadAllText(_filePath);
             _settings = JsonSerializer.Deserialize<Settings>(_jsonContent);
             _settings.Setting[0].DifficultyLevel = difficulty;
 
@@ -38,9 +38,10 @@ namespace SpellingRace.Managers
 
         public void LoadSettings()
         {
+            _jsonContent = File.ReadAllText(_filePath);
             _settings = JsonSerializer.Deserialize<Settings>(_jsonContent);
 
-            _gameState.Difficulty = _settings.Setting[0].DifficultyLevel switch
+            Difficulty = _settings.Setting[0].DifficultyLevel switch
             {
                 0 => Difficulty.EASY,
                 1 => Difficulty.NORMAL,
@@ -48,33 +49,77 @@ namespace SpellingRace.Managers
                 _ => Difficulty.EASY
             };
 
-            switch(_gameState.Difficulty)
+            // _gameState.Difficulty = _settings.Setting[0].DifficultyLevel switch
+            // {
+            //     0 => Difficulty.EASY,
+            //     1 => Difficulty.NORMAL,
+            //     2 => Difficulty.HARD,
+            //     _ => Difficulty.EASY
+            // };
+
+            // switch(_gameState.Difficulty)
+            // {
+            //     case Difficulty.EASY:
+            //         _gameState.Life = 6;
+            //         _gameState.SpeedMultiplier = 1f;
+            //         _gameState.PathsNumber = 2;
+            //         break;
+
+            //     case Difficulty.NORMAL:
+            //         _gameState.Life = 5;
+            //         _gameState.SpeedMultiplier = 3f;
+            //         _gameState.PathsNumber = 2;
+            //         break;
+
+            //     case Difficulty.HARD:
+            //         _gameState.Life = 4;
+            //         _gameState.SpeedMultiplier = 5f;
+            //         _gameState.PathsNumber = 2;
+            //         break;
+
+            //     default:
+            //         _gameState.Life = 6;
+            //         _gameState.SpeedMultiplier = 1f;
+            //         _gameState.PathsNumber = 2;
+            //         break;
+            // }
+
+        }
+
+        public void LoadGameStateParameters()
+        {
+            _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
+            
+            switch(Difficulty)
             {
                 case Difficulty.EASY:
+                    _gameState.Difficulty = Difficulty.EASY;
                     _gameState.Life = 6;
                     _gameState.SpeedMultiplier = 1f;
                     _gameState.PathsNumber = 2;
                     break;
 
                 case Difficulty.NORMAL:
+                    _gameState.Difficulty = Difficulty.NORMAL;
                     _gameState.Life = 5;
                     _gameState.SpeedMultiplier = 3f;
                     _gameState.PathsNumber = 2;
                     break;
 
                 case Difficulty.HARD:
+                    _gameState.Difficulty = Difficulty.HARD;
                     _gameState.Life = 4;
                     _gameState.SpeedMultiplier = 5f;
                     _gameState.PathsNumber = 2;
                     break;
 
                 default:
+                    _gameState.Difficulty = Difficulty.EASY;
                     _gameState.Life = 6;
                     _gameState.SpeedMultiplier = 1f;
                     _gameState.PathsNumber = 2;
                     break;
-                }
-
+            }
         }
     }
 }

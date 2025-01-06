@@ -12,8 +12,8 @@ namespace SpellingRace.Core
         public static SceneManager SceneManager;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private GameStateManager _gameStateManager;
-        //private GameSettings _gameSettings;
+        //private GameStateManager _gameStateManager;
+        private SettingsManager _settingsManager;
 
 
         public Game1()
@@ -22,8 +22,9 @@ namespace SpellingRace.Core
             IsMouseVisible = true;
             _graphics = new(this);
             SceneManager = new();
-            _gameStateManager = new();
-            //_gameSettings = new();
+            //_gameStateManager = new();
+            _settingsManager = new();
+
         }
 
         protected override void Initialize()
@@ -35,7 +36,8 @@ namespace SpellingRace.Core
             ServiceProvider.Register(Content);
             ServiceProvider.Register(_spriteBatch);
             ServiceProvider.Register(_graphics);
-            _gameStateManager.RegisterGameState();
+            ServiceProvider.Register(_settingsManager);
+            //_gameStateManager.RegisterGameState();
            
 
             _graphics.PreferredBackBufferWidth = 1280;
@@ -54,7 +56,7 @@ namespace SpellingRace.Core
         protected override void Update(GameTime gameTime)
         {
             SceneManager.Update(gameTime);
-            _gameStateManager.Update(gameTime);
+            //_gameStateManager.Update(gameTime);
 
             if(SceneManager.IsEmpty) Exit();
 

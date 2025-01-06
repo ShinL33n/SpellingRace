@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpellingRace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84733f5e0dfccf4de89eb1087a2d759bf7520134")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0be5290d90d1068de75d53231f63024d35e849e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpellingRace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpellingRace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -21,8 +21,8 @@
 				"form": 3,
 				"words": [
 					{"word": "żółty", "incorrect_forms": ["żułty", "rzułty"]},
-					{"word": "żyrandol ", "incorrect_forms": ["rzyrandol", "żylandor"]},
-					{"word": "ubóstwo ", "incorrect_forms": ["ubustwo","ubóstfo"]}
+					{"word": "żyrandol", "incorrect_forms": ["rzyrandol", "żylandor"]},
+					{"word": "ubóstwo", "incorrect_forms": ["ubustwo","ubóstfo"]}
 				]
 			},
 			{
@@ -34,8 +34,8 @@
 					{"word": "hałas", "incorrect_forms": ["chałas","chauas", "hauas"]},
 					{"word": "ruch", "incorrect_forms": ["ruh","róch", "róh"]},
 					{"word": "rząd", "incorrect_forms": ["żąd","rzond", "żond"]},
-					{"word": "przepaść ", "incorrect_forms": ["pżepaść", "przepaźć", "pżepaźć"]},
-					{"word": "życie  ", "incorrect_forms": ["rzycie", "życię", "rzycię"]},
+					{"word": "przepaść", "incorrect_forms": ["pżepaść", "przepaźć", "pżepaźć"]},
+					{"word": "życie", "incorrect_forms": ["rzycie", "życię", "rzycię"]},
 					{"word": "rzut", "incorrect_forms": ["rzót","żut", "żót"]}
 				]
 			}

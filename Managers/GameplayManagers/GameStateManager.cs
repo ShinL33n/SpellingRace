@@ -27,7 +27,7 @@ namespace SpellingRace.Managers.GameplayManagers
         public void Update(GameTime gameTime)
         {
             // If it works it works, do not touch it \/
-            _gameState = ServiceProvider.Resolve<GameState>();
+            //_gameState = ServiceProvider.Resolve<GameState>();
 
             _gameState.Time += gameTime.ElapsedGameTime;
 

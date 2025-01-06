@@ -29,6 +29,9 @@ namespace SpellingRace.Scenes
         {
             CreatePlayer();
 
+            _gameStateManager = new();
+            _gameStateManager.RegisterGameState();
+
             //_difficulty = Difficulty.NORMAL; // FROM SETTINGS
 
             // _gameSettingsManager = new();
@@ -36,17 +39,19 @@ namespace SpellingRace.Scenes
 
                 //_gameStateManager = new();
             //ServiceProvider.Register(_gameStateManager);
+            _settingsManager = ServiceProvider.Resolve<SettingsManager>() ?? throw new NullReferenceException("SettingsManager not registered in ServiceProvider.");
             _gameState = ServiceProvider.Resolve<GameState>() ?? throw new NullReferenceException("GameState not registered in ServiceProvider.");
-            _gameState = new GameState {
-                Time = TimeSpan.Zero,
-                Level = 0, 
-                GatesPassed = 0,
-                Score = 0,
-            };
-            ServiceProvider.Register(_gameState);
+            // _gameState = new GameState {
+            //     Time = TimeSpan.Zero,
+            //     Level = 0, 
+            //     GatesPassed = 0,
+            //     Score = 0,
+            // };
+            // ServiceProvider.Register(_gameState);
 
-            _settingsManager = new();
+            //_settingsManager = new();
             _settingsManager.LoadSettings();
+            _settingsManager.LoadGameStateParameters();
 
             //_gameStateManager = new();
             //_gameStateManager.RegisterGameState();
@@ -84,14 +89,17 @@ namespace SpellingRace.Scenes
             if(InputManager.WasKeyTriggered(Keys.Escape)) 
                 Game1.SceneManager.AddScene(new PauseScene());
 
+                
+            _movementManager.Update(gameTime);
             Vector2 playerPosition = _movementManager.GetPlayerPosition();
 
 
             //_environmentBackground.Update();
             //_environmentBackgroundManager.Update();
+            _gameStateManager.Update(gameTime);
             _environmentBackgroundManager.Update();
+            
             _gateChoiceManager.Update(gameTime, playerPosition);
-            _movementManager.Update(gameTime);
             _player.Sprite.Update(playerPosition);
             _gatesManager.Update();
             _gameInfoDisplayManager.Update(gameTime);
